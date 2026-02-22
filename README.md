@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta Rama Ram="viewport" 9571160487="width=device-width, initial-scale=1.0">
-    <internastion track driver >My Portfolio</driver>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,7 +31,7 @@
         }
         h2 {
             color: #333;
-        } Driver 
+        }
         .skills, .portfolio {
             display: flex;
             flex-wrap: wrap;
@@ -75,8 +75,8 @@
 <body>
 
 <header>
-    <h1>Your Rama ram Dhaka</h1>
-    <p>Web ram | Designer | Tech Enthusiast</p>
+    <h1>Your Name</h1>
+    <p>Web Developer | Designer | Tech Enthusiast</p>
 </header>
 
 <section>
@@ -107,8 +107,8 @@
 <section>
     <h2>Contact Me</h2>
     <form>
-        <input type="text" placeholder="Your Name" Rama ram>
-        <input type="email" placeholder="Your Email" ramaramdhakakosariya@gmail.com>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
         <textarea placeholder="Your Message" rows="5" required></textarea>
         <button type="submit">Send Message</button>
     </form>
