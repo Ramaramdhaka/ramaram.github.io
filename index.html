@@ -3,140 +3,289 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rama Ram — CV</title>
-  <meta name="description" content="CV of Rama Ram (HGV Driver)" />
+  <title>Rama Ram — Professional Driver</title>
+  <meta name="description" content="Rama Ram — HGV / Heavy Goods Vehicle Driver. Safety-first transport & logistics." />
 
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#0f1a2e;
-      --muted:#a7b4d6;
-      --text:#e9efff;
-      --line:rgba(233,239,255,.12);
-      --accent:#7c9bff;
-      --accent2:#42d3a5;
-      --chip:rgba(124,155,255,.12);
+      --bg:#f6f7fb;
+      --paper:#ffffff;
+      --text:#121826;
+      --muted:#5b6476;
+      --line:rgba(18,24,38,.10);
+      --shadow: 0 14px 40px rgba(18,24,38,.10);
+      --shadow2: 0 8px 24px rgba(18,24,38,.10);
+
+      --accent:#2a60ff;
+      --accent2:#1bbf8a;
+      --accent3:#ffb020;
+
+      --radius:18px;
+      --radius2:22px;
+
+      --max:1080px;
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue";
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(124,155,255,.22), transparent 55%),
-                  radial-gradient(900px 500px at 90% 20%, rgba(66,211,165,.18), transparent 55%),
-                  var(--bg);
       color:var(--text);
-      line-height:1.55;
+      background:
+        radial-gradient(1200px 600px at 15% 0%, rgba(42,96,255,.12), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(27,191,138,.10), transparent 55%),
+        var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue";
+      line-height:1.6;
     }
-    a{color:var(--text); text-decoration:none}
-    a:hover{color:#fff; text-decoration:underline}
+    a{color:inherit; text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 64px}
 
-    .wrap{max-width:980px; margin:0 auto; padding:28px 16px 64px}
-    .topbar{
+    /* NAV */
+    .nav{
+      position:sticky; top:12px; z-index:50;
       display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:14px 16px; border:1px solid var(--line);
-      background:rgba(15,26,46,.7); backdrop-filter: blur(10px);
-      border-radius:16px; position:sticky; top:14px; z-index:5;
+      gap:12px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.75);
+      backdrop-filter: blur(10px);
+      border:1px solid var(--line);
+      border-radius:999px;
+      box-shadow: var(--shadow2);
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
+    .dot{
+      width:12px; height:12px; border-radius:99px;
+      background: conic-gradient(from 180deg, var(--accent), var(--accent2), var(--accent3), var(--accent));
+      box-shadow: 0 0 0 6px rgba(42,96,255,.10);
+    }
+    .navlinks{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+      font-weight:800; color:var(--muted);
+    }
+    .navlinks a{padding:8px 10px; border-radius:999px}
+    .navlinks a:hover{background:rgba(42,96,255,.08); color:var(--text); text-decoration:none}
+    .cta{
+      display:flex; align-items:center; gap:10px;
     }
     .btn{
-      appearance:none; border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(124,155,255,.18), rgba(124,155,255,.10));
-      color:var(--text); padding:10px 12px; border-radius:12px;
-      font-weight:700; cursor:pointer;
+      border:1px solid var(--line);
+      background:var(--paper);
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow: 0 6px 18px rgba(18,24,38,.06);
+      display:inline-flex; align-items:center; gap:10px;
     }
-    .btn:hover{border-color:rgba(124,155,255,.35)}
-    .btn2{
-      background:linear-gradient(180deg, rgba(66,211,165,.18), rgba(66,211,165,.10));
+    .btn:hover{border-color:rgba(42,96,255,.25)}
+    .btnPrimary{
+      border-color:rgba(42,96,255,.25);
+      background: linear-gradient(180deg, rgba(42,96,255,.12), rgba(42,96,255,.06));
+    }
+    .btnGreen{
+      border-color:rgba(27,191,138,.28);
+      background: linear-gradient(180deg, rgba(27,191,138,.12), rgba(27,191,138,.06));
     }
 
-    header{
-      margin-top:18px;
+    /* Mobile menu */
+    .hamb{
+      display:none;
+      padding:10px 12px;
+      border-radius:999px;
       border:1px solid var(--line);
-      background:rgba(15,26,46,.65);
-      border-radius:22px;
+      background:var(--paper);
+      cursor:pointer;
+      font-weight:900;
+    }
+    .mobilePanel{
+      display:none;
+      margin-top:10px;
+      background:rgba(255,255,255,.85);
+      backdrop-filter: blur(10px);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:10px;
+      box-shadow: var(--shadow2);
+    }
+    .mobilePanel a{
+      display:block;
+      padding:12px 12px;
+      border-radius:12px;
+      font-weight:900;
+      color:var(--muted);
+    }
+    .mobilePanel a:hover{background:rgba(42,96,255,.08); color:var(--text); text-decoration:none}
+
+    @media (max-width:860px){
+      .navlinks{display:none}
+      .hamb{display:inline-flex}
+      .cta .btn{display:none}
+    }
+
+    /* HERO */
+    .hero{
+      margin-top:18px;
+      background:rgba(255,255,255,.85);
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
       padding:22px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 220px at 20% 0%, rgba(42,96,255,.18), transparent 60%),
+        radial-gradient(600px 220px at 90% 10%, rgba(27,191,138,.14), transparent 60%);
+      pointer-events:none;
+    }
+    .heroGrid{
+      position:relative;
       display:grid;
       grid-template-columns: 1.2fr .8fr;
       gap:18px;
+      align-items:stretch;
     }
-    @media (max-width:820px){
-      header{grid-template-columns:1fr}
-      .topbar{position:static}
+    @media (max-width:900px){
+      .heroGrid{grid-template-columns:1fr}
     }
-
-    .name{
-      font-size: clamp(28px, 4vw, 44px);
-      letter-spacing:.3px;
-      margin:0 0 6px 0;
+    .kicker{
       font-weight:900;
+      letter-spacing:.2px;
+      color:rgba(42,96,255,.95);
+      background:rgba(42,96,255,.10);
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      margin-bottom:10px;
     }
-    .role{
-      margin:0 0 14px 0;
+    h1{
+      margin:0 0 10px 0;
+      font-size: clamp(30px, 4vw, 52px);
+      letter-spacing:-.6px;
+      line-height:1.1;
+    }
+    .sub{
+      margin:0;
       color:var(--muted);
       font-weight:700;
+      max-width:60ch;
     }
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .heroActions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .chips{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin-top:14px;
+    }
     .chip{
       border:1px solid var(--line);
-      background:var(--chip);
-      padding:7px 10px;
+      background:rgba(18,24,38,.03);
+      padding:8px 10px;
       border-radius:999px;
-      font-weight:700;
+      font-weight:900;
       color:var(--muted);
       font-size:13px;
     }
-    .card{
-      border:1px solid var(--line);
-      background:rgba(15,26,46,.65);
-      border-radius:18px;
-      padding:18px;
+
+    /* Cards / Sections */
+    section{scroll-margin-top:90px}
+    .section{
       margin-top:16px;
+      background:rgba(255,255,255,.85);
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: var(--shadow2);
     }
-    h2{
-      margin:0 0 10px 0;
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:14px; flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .sectionHead h2{
+      margin:0;
       font-size:18px;
       letter-spacing:.2px;
     }
-    .muted{color:var(--muted)}
-    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-    @media (max-width:820px){.grid2{grid-template-columns:1fr}}
-
-    .kv{display:grid; grid-template-columns:140px 1fr; gap:10px; padding:8px 0; border-top:1px dashed var(--line)}
-    .kv:first-child{border-top:none; padding-top:0}
-    .k{color:var(--muted); font-weight:800}
-    .v{font-weight:700}
-
-    .timeline{display:grid; gap:12px; margin-top:8px}
-    .item{
-      border:1px solid var(--line);
-      background:rgba(11,18,32,.35);
-      border-radius:16px;
-      padding:14px;
-    }
-    .item .t{display:flex; flex-wrap:wrap; gap:8px; align-items:baseline; justify-content:space-between}
-    .item .title{font-weight:900}
-    .item .when{color:var(--muted); font-weight:800}
-    ul{margin:10px 0 0 18px}
-    li{margin:6px 0}
-
-    table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:14px; border:1px solid var(--line)}
-    th,td{padding:10px 12px; text-align:left; border-bottom:1px solid var(--line)}
-    th{background:rgba(124,155,255,.12); font-weight:900}
-    tr:last-child td{border-bottom:none}
-
-    footer{
-      margin-top:18px;
+    .sectionHead p{
+      margin:0;
       color:var(--muted);
-      text-align:center;
       font-weight:700;
     }
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .grid2{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
+    @media (max-width:900px){
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+    }
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:14px;
+    }
+    .cardTitle{
+      display:flex; gap:10px; align-items:center;
+      font-weight:900; margin:0 0 6px 0;
+    }
+    .cardTitle .ic{
+      width:34px; height:34px; border-radius:12px;
+      display:grid; place-items:center;
+      background:rgba(42,96,255,.10);
+      border:1px solid rgba(42,96,255,.18);
+    }
+    .muted{color:var(--muted); font-weight:700}
+    .big{
+      font-size:16px;
+      font-weight:800;
+    }
+    .list{margin:10px 0 0 18px; color:var(--muted); font-weight:700}
+    .list li{margin:6px 0}
 
-    /* Print */
+    /* Timeline */
+    .timeline{display:grid; gap:12px}
+    .job{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:14px;
+    }
+    .jobTop{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      align-items:baseline;
+    }
+    .jobTitle{font-weight:1000}
+    .jobMeta{color:var(--muted); font-weight:900}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid var(--line);
+      background:rgba(27,191,138,.10);
+      color:rgba(14,94,68,.95);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:13px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:16px;
+      text-align:center;
+      color:var(--muted);
+      font-weight:800;
+      padding:16px 8px;
+    }
+
+    /* Print (optional) */
     @media print{
-      :root{--bg:#fff; --text:#111; --muted:#333; --card:#fff; --line:#ddd; --accent:#000; --accent2:#000; --chip:#f3f3f3}
+      .nav,.mobilePanel,.heroActions{display:none !important}
       body{background:#fff}
-      .topbar{display:none}
-      header,.card,.item{background:#fff}
-      a{color:#111; text-decoration:none}
+      .hero,.section{box-shadow:none}
       .wrap{padding:0}
     }
   </style>
@@ -145,184 +294,335 @@
 <body>
   <div class="wrap">
 
-    <div class="topbar">
-      <div style="font-weight:900; letter-spacing:.2px;">Rama Ram — CV</div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <button class="btn" onclick="window.print()">Print / Save PDF</button>
-        <a class="btn btn2" href="mailto:ramaramdhakakosariya@gmail.com">Email</a>
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Rama Ram</span>
       </div>
+
+      <div class="navlinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">What I Do</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="cta">
+        <a class="btn btnPrimary" href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">
+          Download CV
+        </a>
+        <a class="btn btnGreen" href="#contact">Hire / Contact</a>
+        <button class="hamb" id="hamb" aria-expanded="false" aria-controls="mobilePanel">Menu</button>
+      </div>
+    </nav>
+
+    <div class="mobilePanel" id="mobilePanel" role="menu" aria-label="Mobile navigation">
+      <a href="#home" role="menuitem">Home</a>
+      <a href="#about" role="menuitem">About</a>
+      <a href="#services" role="menuitem">What I Do</a>
+      <a href="#experience" role="menuitem">Experience</a>
+      <a href="#skills" role="menuitem">Skills</a>
+      <a href="#contact" role="menuitem">Contact</a>
+      <a href="assets/rama-cv.pdf" target="_blank" rel="noreferrer" role="menuitem">Download CV</a>
     </div>
 
-    <header>
-      <div>
-        <h1 class="name">Rama Ram</h1>
-        <p class="role">HGV Driver • Heavy / Container / Hazardous Materials</p>
+    <!-- HERO -->
+    <header class="hero" id="home">
+      <div class="heroGrid">
+        <div>
+          <div class="kicker">Professional Driver • Safety First</div>
+          <h1>HGV / Heavy Goods Vehicle Driver</h1>
+          <p class="sub">
+            Dedicated, safety-conscious driver with 9+ years of experience in transport & logistics — focused on clean driving,
+            on-time delivery, and responsible handling of loads.
+          </p>
 
-        <p class="muted" style="margin:0;">
-          Dedicated and safety-conscious double/triple trailer support driver with 9+ years of experience ensuring safe
-          and timely transportation. Strong knowledge of traffic rules, reliable, punctual, customer-focused, and committed
-          to maintaining a clean, well-maintained vehicle.
-        </p>
+          <div class="heroActions">
+            <a class="btn btnPrimary" href="#experience">View Experience</a>
+            <a class="btn btnGreen" href="#contact">Contact Now</a>
+            <button class="btn" onclick="window.print()">Print</button>
+          </div>
 
-        <div class="chips">
-          <span class="chip">Nationality: Indian</span>
-          <span class="chip">Mother Tongue: Hindi</span>
-          <span class="chip">English: B2</span>
-          <span class="chip">Driving Licence: CE</span>
-        </div>
-      </div>
-
-      <div class="card" style="margin:0;">
-        <h2>Contact</h2>
-
-        <div class="kv">
-          <div class="k">Phone</div>
-          <div class="v"><a href="tel:+919571160487">(+91) 9571160487</a></div>
+          <div class="chips" aria-label="Highlights">
+            <span class="chip">Licence: CE</span>
+            <span class="chip">Language: Hindi (Native)</span>
+            <span class="chip">English: B2</span>
+            <span class="chip">Based in India</span>
+          </div>
         </div>
 
-        <div class="kv">
-          <div class="k">Email</div>
-          <div class="v"><a href="mailto:ramaramdhakakosariya@gmail.com">ramaramdhakakosariya@gmail.com</a></div>
-        </div>
+        <div class="card" style="position:relative;">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">☎</span>
+            <span>Quick Contact</span>
+          </div>
+          <div class="muted">Phone</div>
+          <div class="big"><a href="tel:+919571160487">(+91) 9571160487</a></div>
 
-        <div class="kv">
-          <div class="k">Website</div>
-          <div class="v"><a href="https://www.apanarr.weebly.com" target="_blank" rel="noreferrer">www.apanarr.weebly.com</a></div>
-        </div>
+          <div style="height:10px"></div>
+          <div class="muted">Email</div>
+          <div class="big"><a href="mailto:ramaramdhakakosariya@gmail.com">ramaramdhakakosariya@gmail.com</a></div>
 
-        <div class="kv">
-          <div class="k">Instagram</div>
-          <div class="v"><a href="https://www.instagram.com/rama_ram_dhaka_kosariya?igsh=ZmUzb2U3bDRmMjZv" target="_blank" rel="noreferrer">Profile</a></div>
-        </div>
+          <div style="height:10px"></div>
+          <div class="muted">Website</div>
+          <div class="big"><a href="https://www.apanarr.weebly.com" target="_blank" rel="noreferrer">www.apanarr.weebly.com</a></div>
 
-        <div class="kv">
-          <div class="k">WhatsApp</div>
-          <div class="v"><a href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">Chat Link</a></div>
+          <div style="height:12px"></div>
+          <div class="chips">
+            <a class="chip" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a class="chip" href="https://www.instagram.com/rama_ram_dhaka_kosariya?igsh=ZmUzb2U3bDRmMjZv" target="_blank" rel="noreferrer">Instagram</a>
+            <a class="chip" href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">CV PDF</a>
+          </div>
         </div>
       </div>
     </header>
 
-    <section class="card">
-      <h2>Personal Details</h2>
-      <div class="grid2">
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="sectionHead">
         <div>
-          <div class="kv"><div class="k">Date of Birth</div><div class="v">07/07/1994</div></div>
-          <div class="kv"><div class="k">Place of Birth</div><div class="v">Barmer, Rajasthan, India</div></div>
-          <div class="kv"><div class="k">Gender</div><div class="v">Male</div></div>
+          <h2>About</h2>
+          <p>A clean overview — not a CV layout.</p>
         </div>
-        <div>
-          <div class="kv"><div class="k">Passport</div><div class="v">C 4652288</div></div>
-          <div class="kv"><div class="k">Address</div><div class="v">Dhako ki dhani, Kosariya, Baytu, Balotra, 344035, Barmer, India</div></div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">👤</span>
+            <span>Profile</span>
+          </div>
+          <p class="muted" style="margin:0;">
+            I focus on safe, timely transportation with strong traffic-rule knowledge and customer-service mindset.
+            I keep the vehicle clean, well-maintained, and delivery-oriented.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">📍</span>
+            <span>Base & Basics</span>
+          </div>
+          <ul class="list">
+            <li><b>Nationality:</b> Indian</li>
+            <li><b>Birth:</b> 07/07/1994 • Barmer, Rajasthan</li>
+            <li><b>Address:</b> Dhako ki dhani, Kosariya, Baytu, Balotra, 344035, Barmer</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="card">
-      <h2>Work Experience</h2>
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="sectionHead">
+        <div>
+          <h2>What I Do</h2>
+          <p>Clear, European-style service blocks.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">🚛</span>
+            <span>Heavy Transport</span>
+          </div>
+          <p class="muted" style="margin:0;">
+            Responsible heavy-goods delivery with on-time focus, route planning, and safe load handling.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">🧪</span>
+            <span>Hazardous Materials</span>
+          </div>
+          <p class="muted" style="margin:0;">
+            Experience with chemical/hazardous transportation and safety-first discipline.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">🗺️</span>
+            <span>Navigation & Tracking</span>
+          </div>
+          <p class="muted" style="margin:0;">
+            Confident with GPS, Google Maps, tracking tools, and efficient long-route planning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="sectionHead">
+        <div>
+          <h2>Experience</h2>
+          <p>Simple timeline cards (professional & modern).</p>
+        </div>
+        <span class="pill">9+ Years</span>
+      </div>
 
       <div class="timeline">
-        <div class="item">
-          <div class="t">
-            <div class="title">Hazardous Materials Driver — Shree Ravray Logistics (Gandhidham, India)</div>
-            <div class="when">01/08/2015 – 30/12/2019</div>
+        <div class="job">
+          <div class="jobTop">
+            <div class="jobTitle">Hazardous Materials Driver — Shree Ravray Logistics</div>
+            <div class="jobMeta">01/08/2015 – 30/12/2019</div>
           </div>
-          <ul>
-            <li>Loaded chemicals from Kandla Port / Mundra Port and transported across India.</li>
-            <li>Maintained strict safety and time management during transportation.</li>
+          <ul class="list">
+            <li>Loaded chemicals from Kandla / Mundra Port and transported across India.</li>
+            <li>Maintained safety procedures and time discipline during trips.</li>
           </ul>
         </div>
 
-        <div class="item">
-          <div class="t">
-            <div class="title">Heavy Goods Vehicle Driver — UEM India Pvt. Limited (Gurugram, Haryana, India)</div>
-            <div class="when">15/02/2020 – Current</div>
+        <div class="job">
+          <div class="jobTop">
+            <div class="jobTitle">Heavy Goods Vehicle Driver — UEM India Pvt. Limited</div>
+            <div class="jobMeta">15/02/2020 – Current</div>
           </div>
-          <ul>
-            <li>Container delivery: Gujarat port to HPCL Pachpadra, Rajasthan supply.</li>
-            <li>Transport of cement, wood, iron pipes, rods, and other loads across India.</li>
+          <ul class="list">
+            <li>Container delivery: Gujarat port → HPCL Pachpadra, Rajasthan supply.</li>
+            <li>Transported cement, wood, iron pipes, rods and other loads across India.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="card">
-      <h2>Education & Training</h2>
-      <div class="item">
-        <div class="t">
-          <div class="title">12th (Arts) — Board of Secondary Education Rajasthan</div>
-          <div class="when">24/05/2012 • Ajmer, India</div>
-        </div>
-        <div class="muted" style="margin-top:8px;">
-          Website: <a href="https://rajeduboard.rajasthan.gov.in" target="_blank" rel="noreferrer">rajeduboard.rajasthan.gov.in</a>
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="sectionHead">
+        <div>
+          <h2>Skills</h2>
+          <p>Short & clean, easy to scan.</p>
         </div>
       </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">✅</span>
+            <span>Core</span>
+          </div>
+          <div class="chips">
+            <span class="chip">Safety & Compliance</span>
+            <span class="chip">Traffic Rule Knowledge</span>
+            <span class="chip">Punctual & Reliable</span>
+            <span class="chip">Vehicle Cleanliness</span>
+            <span class="chip">Customer Service</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">🧰</span>
+            <span>Tools</span>
+          </div>
+          <div class="chips">
+            <span class="chip">Google Maps</span>
+            <span class="chip">GPS Tracking</span>
+            <span class="chip">Navigation</span>
+            <span class="chip">Mobile/Tablet</span>
+            <span class="chip">Computer & Internet</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:12px;">
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">🪪</span>
+            <span>Driving Licence</span>
+          </div>
+          <ul class="list">
+            <li><b>Category:</b> CE</li>
+            <li><b>Valid:</b> 21/02/2015 – 15/02/2031</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">🎓</span>
+            <span>Education</span>
+          </div>
+          <ul class="list">
+            <li><b>12th (Arts)</b> — Board of Secondary Education Rajasthan</li>
+            <li><b>Year:</b> 24/05/2012 • Ajmer, India</li>
+            <li><a href="https://rajeduboard.rajasthan.gov.in" target="_blank" rel="noreferrer">rajeduboard.rajasthan.gov.in</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Language Skills</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Language</th>
-            <th>Listening</th>
-            <th>Reading</th>
-            <th>Speaking</th>
-            <th>Writing</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><b>Hindi</b></td>
-            <td colspan="4">Mother tongue</td>
-          </tr>
-          <tr>
-            <td><b>English</b></td>
-            <td>B2</td>
-            <td>B2</td>
-            <td>B2</td>
-            <td>B2</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="muted" style="margin:10px 0 0 0; font-size:13px;">
-        Levels: A1/A2 Basic • B1/B2 Independent • C1/C2 Proficient
-      </p>
-    </section>
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="sectionHead">
+        <div>
+          <h2>Contact</h2>
+          <p>One-click contact actions.</p>
+        </div>
+      </div>
 
-    <section class="card">
-      <h2>Skills</h2>
-      <div class="chips">
-        <span class="chip">Google Maps</span>
-        <span class="chip">GPS Tracking</span>
-        <span class="chip">Map Navigation</span>
-        <span class="chip">Tablet / Mobile Devices</span>
-        <span class="chip">Security Awareness</span>
-        <span class="chip">Project Scheduling & Tracking</span>
-        <span class="chip">Computer & Internet Proficiency</span>
-      </div>
-      <p class="muted" style="margin-top:12px; font-weight:800;">“I'll live up to your trust”</p>
-    </section>
+      <div class="grid2">
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">📞</span>
+            <span>Call / Email</span>
+          </div>
+          <p class="muted" style="margin:0 0 10px 0;">
+            Fast response — use any option below:
+          </p>
+          <div class="heroActions">
+            <a class="btn btnPrimary" href="tel:+919571160487">Call</a>
+            <a class="btn btnGreen" href="mailto:ramaramdhakakosariya@gmail.com">Email</a>
+            <a class="btn" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
 
-    <section class="card">
-      <h2>Driving Licence</h2>
-      <div class="kv">
-        <div class="k">Category</div>
-        <div class="v">CE</div>
-      </div>
-      <div class="kv">
-        <div class="k">Valid From</div>
-        <div class="v">21/02/2015</div>
-      </div>
-      <div class="kv">
-        <div class="k">Valid To</div>
-        <div class="v">15/02/2031</div>
+        <div class="card">
+          <div class="cardTitle">
+            <span class="ic" aria-hidden="true">🔗</span>
+            <span>Links</span>
+          </div>
+          <ul class="list">
+            <li><b>Website:</b> <a href="https://www.apanarr.weebly.com" target="_blank" rel="noreferrer">apanarr.weebly.com</a></li>
+            <li><b>Instagram:</b> <a href="https://www.instagram.com/rama_ram_dhaka_kosariya?igsh=ZmUzb2U3bDRmMjZv" target="_blank" rel="noreferrer">rama_ram_dhaka_kosariya</a></li>
+            <li><b>CV PDF:</b> <a href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">Open / Download</a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <footer>
-      India • 28/09/2025
+      © <span id="year"></span> Rama Ram • Built for a clean, modern professional presence
     </footer>
 
   </div>
+
+  <script>
+    // Mobile menu
+    const hamb = document.getElementById("hamb");
+    const panel = document.getElementById("mobilePanel");
+
+    function closePanel(){
+      panel.style.display = "none";
+      hamb.setAttribute("aria-expanded","false");
+    }
+
+    hamb?.addEventListener("click", () => {
+      const open = hamb.getAttribute("aria-expanded") === "true";
+      hamb.setAttribute("aria-expanded", String(!open));
+      panel.style.display = open ? "none" : "block";
+    });
+
+    panel?.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => closePanel());
+    });
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
