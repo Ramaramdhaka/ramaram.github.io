@@ -1,177 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAMA RAM | CE Licensed International Truck Driver</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rama Ram — CV</title>
+  <meta name="description" content="CV of Rama Ram (HGV Driver)" />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a2e;
+      --muted:#a7b4d6;
+      --text:#e9efff;
+      --line:rgba(233,239,255,.12);
+      --accent:#7c9bff;
+      --accent2:#42d3a5;
+      --chip:rgba(124,155,255,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue";
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(124,155,255,.22), transparent 55%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(66,211,165,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:var(--text); text-decoration:none}
+    a:hover{color:#fff; text-decoration:underline}
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    .wrap{max-width:980px; margin:0 auto; padding:28px 16px 64px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:14px 16px; border:1px solid var(--line);
+      background:rgba(15,26,46,.7); backdrop-filter: blur(10px);
+      border-radius:16px; position:sticky; top:14px; z-index:5;
+    }
+    .btn{
+      appearance:none; border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(124,155,255,.18), rgba(124,155,255,.10));
+      color:var(--text); padding:10px 12px; border-radius:12px;
+      font-weight:700; cursor:pointer;
+    }
+    .btn:hover{border-color:rgba(124,155,255,.35)}
+    .btn2{
+      background:linear-gradient(180deg, rgba(66,211,165,.18), rgba(66,211,165,.10));
+    }
 
-body{background:#f3f4f6;color:#333;line-height:1.6;}
+    header{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background:rgba(15,26,46,.65);
+      border-radius:22px;
+      padding:22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+    }
+    @media (max-width:820px){
+      header{grid-template-columns:1fr}
+      .topbar{position:static}
+    }
 
-header{
-background:#0f172a;
-color:white;
-padding:20px 10%;
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-align-items:center;
-}
+    .name{
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing:.3px;
+      margin:0 0 6px 0;
+      font-weight:900;
+    }
+    .role{
+      margin:0 0 14px 0;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      border:1px solid var(--line);
+      background:var(--chip);
+      padding:7px 10px;
+      border-radius:999px;
+      font-weight:700;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background:rgba(15,26,46,.65);
+      border-radius:18px;
+      padding:18px;
+      margin-top:16px;
+    }
+    h2{
+      margin:0 0 10px 0;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .muted{color:var(--muted)}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width:820px){.grid2{grid-template-columns:1fr}}
 
-header h1{font-size:22px;}
+    .kv{display:grid; grid-template-columns:140px 1fr; gap:10px; padding:8px 0; border-top:1px dashed var(--line)}
+    .kv:first-child{border-top:none; padding-top:0}
+    .k{color:var(--muted); font-weight:800}
+    .v{font-weight:700}
 
-.buttons a{
-text-decoration:none;
-padding:8px 18px;
-background:#2563eb;
-color:white;
-border-radius:20px;
-margin:5px;
-display:inline-block;
-font-size:14px;
-}
+    .timeline{display:grid; gap:12px; margin-top:8px}
+    .item{
+      border:1px solid var(--line);
+      background:rgba(11,18,32,.35);
+      border-radius:16px;
+      padding:14px;
+    }
+    .item .t{display:flex; flex-wrap:wrap; gap:8px; align-items:baseline; justify-content:space-between}
+    .item .title{font-weight:900}
+    .item .when{color:var(--muted); font-weight:800}
+    ul{margin:10px 0 0 18px}
+    li{margin:6px 0}
 
-.buttons a:hover{background:#1e40af;}
+    table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:14px; border:1px solid var(--line)}
+    th,td{padding:10px 12px; text-align:left; border-bottom:1px solid var(--line)}
+    th{background:rgba(124,155,255,.12); font-weight:900}
+    tr:last-child td{border-bottom:none}
 
-.hero{
-background:linear-gradient(to right,#1e3a8a,#2563eb);
-color:white;
-padding:70px 10%;
-display:flex;
-flex-wrap:wrap;
-justify-content:space-between;
-align-items:center;
-}
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      text-align:center;
+      font-weight:700;
+    }
 
-.hero-text{max-width:600px;}
-
-.hero img{
-width:220px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
-
-.section{
-padding:60px 10%;
-text-align:center;
-}
-
-.section h2{
-color:#1e3a8a;
-margin-bottom:25px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
-
-.documents a{
-display:block;
-margin:10px 0;
-color:#2563eb;
-font-weight:600;
-text-decoration:none;
-}
-
-.documents a:hover{text-decoration:underline;}
-
-footer{
-background:#0f172a;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-@media(max-width:768px){
-.hero{flex-direction:column;text-align:center;}
-.hero img{margin-top:20px;}
-}
-</style>
+    /* Print */
+    @media print{
+      :root{--bg:#fff; --text:#111; --muted:#333; --card:#fff; --line:#ddd; --accent:#000; --accent2:#000; --chip:#f3f3f3}
+      body{background:#fff}
+      .topbar{display:none}
+      header,.card,.item{background:#fff}
+      a{color:#111; text-decoration:none}
+      .wrap{padding:0}
+    }
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
 
-<header>
-<h1>RAMA RAM</h1>
-<div class="buttons">
-<a href="RamaRam_CV.pdf" download>Download CV</a>
-<a href="https://wa.me/919571160487" target="_blank">WhatsApp</a>
-<a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-</div>
-</header>
+    <div class="topbar">
+      <div style="font-weight:900; letter-spacing:.2px;">Rama Ram — CV</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn" onclick="window.print()">Print / Save PDF</button>
+        <a class="btn btn2" href="mailto:ramaramdhakakosariya@gmail.com">Email</a>
+      </div>
+    </div>
 
-<section class="hero">
-<div class="hero-text">
-<h2>CE Licensed International Truck Driver</h2>
-<p>11+ Years Experience | India, Nepal & Bhutan Routes | Passport Ready | Seeking Job in Europe</p>
-<p>Professional heavy truck driver with strong safety record and cross-border driving experience.</p>
-</div>
+    <header>
+      <div>
+        <h1 class="name">Rama Ram</h1>
+        <p class="role">HGV Driver • Heavy / Container / Hazardous Materials</p>
 
-<img src="rama.jpg" alt="RAMA RAM">
-</section>
+        <p class="muted" style="margin:0;">
+          Dedicated and safety-conscious double/triple trailer support driver with 9+ years of experience ensuring safe
+          and timely transportation. Strong knowledge of traffic rules, reliable, punctual, customer-focused, and committed
+          to maintaining a clean, well-maintained vehicle.
+        </p>
 
-<section class="section">
-<h2>Professional Summary</h2>
-<p>
-I am RAMA RAM from Rajasthan, India. I hold a CE Driving License with over 11 years of heavy commercial truck driving experience.
-I have driven across India, Nepal and Bhutan. I am passport ready and looking for job opportunities in European countries.
-</p>
-</section>
+        <div class="chips">
+          <span class="chip">Nationality: Indian</span>
+          <span class="chip">Mother Tongue: Hindi</span>
+          <span class="chip">English: B2</span>
+          <span class="chip">Driving Licence: CE</span>
+        </div>
+      </div>
 
-<section class="section">
-<h2>Experience & Skills</h2>
-<div class="cards">
-<div class="card">
-<h3>Experience</h3>
-<p>11+ Years Long Route & Cross Border Driving</p>
-</div>
-<div class="card">
-<h3>License</h3>
-<p>Valid CE Heavy Vehicle License</p>
-</div>
-<div class="card">
-<h3>International Routes</h3>
-<p>India, Nepal & Bhutan</p>
-</div>
-<div class="card">
-<h3>Skills</h3>
-<p>Heavy Truck Driving, Cargo Handling, Road Safety, Basic English</p>
-</div>
-</div>
-</section>
+      <div class="card" style="margin:0;">
+        <h2>Contact</h2>
 
-<section class="section">
-<h2>Documents</h2>
-<div class="documents">
-<a href="RamaRam_CV.pdf" target="_blank">View CV</a>
-<a href="CE_License.pdf" target="_blank">View CE License</a>
-<a href="Passport.pdf" target="_blank">View Passport Copy</a>
-</div>
-</section>
+        <div class="kv">
+          <div class="k">Phone</div>
+          <div class="v"><a href="tel:+919571160487">(+91) 9571160487</a></div>
+        </div>
 
-<section class="section">
-<h2>Contact Information</h2>
-<p>📞 Phone: +91 9571160487</p>
-<p>📧 Email: ramaramdhakakosariya@gmail.com</p>
-<p>📍 Rajasthan, India</p>
-</section>
+        <div class="kv">
+          <div class="k">Email</div>
+          <div class="v"><a href="mailto:ramaramdhakakosariya@gmail.com">ramaramdhakakosariya@gmail.com</a></div>
+        </div>
 
-<footer>
-<p>© 2026 RAMA RAM | CE Licensed International Truck Driver</p>
-</footer>
+        <div class="kv">
+          <div class="k">Website</div>
+          <div class="v"><a href="https://www.apanarr.weebly.com" target="_blank" rel="noreferrer">www.apanarr.weebly.com</a></div>
+        </div>
 
+        <div class="kv">
+          <div class="k">Instagram</div>
+          <div class="v"><a href="https://www.instagram.com/rama_ram_dhaka_kosariya?igsh=ZmUzb2U3bDRmMjZv" target="_blank" rel="noreferrer">Profile</a></div>
+        </div>
+
+        <div class="kv">
+          <div class="k">WhatsApp</div>
+          <div class="v"><a href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">Chat Link</a></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Personal Details</h2>
+      <div class="grid2">
+        <div>
+          <div class="kv"><div class="k">Date of Birth</div><div class="v">07/07/1994</div></div>
+          <div class="kv"><div class="k">Place of Birth</div><div class="v">Barmer, Rajasthan, India</div></div>
+          <div class="kv"><div class="k">Gender</div><div class="v">Male</div></div>
+        </div>
+        <div>
+          <div class="kv"><div class="k">Passport</div><div class="v">C 4652288</div></div>
+          <div class="kv"><div class="k">Address</div><div class="v">Dhako ki dhani, Kosariya, Baytu, Balotra, 344035, Barmer, India</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Work Experience</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="t">
+            <div class="title">Hazardous Materials Driver — Shree Ravray Logistics (Gandhidham, India)</div>
+            <div class="when">01/08/2015 – 30/12/2019</div>
+          </div>
+          <ul>
+            <li>Loaded chemicals from Kandla Port / Mundra Port and transported across India.</li>
+            <li>Maintained strict safety and time management during transportation.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="t">
+            <div class="title">Heavy Goods Vehicle Driver — UEM India Pvt. Limited (Gurugram, Haryana, India)</div>
+            <div class="when">15/02/2020 – Current</div>
+          </div>
+          <ul>
+            <li>Container delivery: Gujarat port to HPCL Pachpadra, Rajasthan supply.</li>
+            <li>Transport of cement, wood, iron pipes, rods, and other loads across India.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Education & Training</h2>
+      <div class="item">
+        <div class="t">
+          <div class="title">12th (Arts) — Board of Secondary Education Rajasthan</div>
+          <div class="when">24/05/2012 • Ajmer, India</div>
+        </div>
+        <div class="muted" style="margin-top:8px;">
+          Website: <a href="https://rajeduboard.rajasthan.gov.in" target="_blank" rel="noreferrer">rajeduboard.rajasthan.gov.in</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Language Skills</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Language</th>
+            <th>Listening</th>
+            <th>Reading</th>
+            <th>Speaking</th>
+            <th>Writing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Hindi</b></td>
+            <td colspan="4">Mother tongue</td>
+          </tr>
+          <tr>
+            <td><b>English</b></td>
+            <td>B2</td>
+            <td>B2</td>
+            <td>B2</td>
+            <td>B2</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin:10px 0 0 0; font-size:13px;">
+        Levels: A1/A2 Basic • B1/B2 Independent • C1/C2 Proficient
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Skills</h2>
+      <div class="chips">
+        <span class="chip">Google Maps</span>
+        <span class="chip">GPS Tracking</span>
+        <span class="chip">Map Navigation</span>
+        <span class="chip">Tablet / Mobile Devices</span>
+        <span class="chip">Security Awareness</span>
+        <span class="chip">Project Scheduling & Tracking</span>
+        <span class="chip">Computer & Internet Proficiency</span>
+      </div>
+      <p class="muted" style="margin-top:12px; font-weight:800;">“I'll live up to your trust”</p>
+    </section>
+
+    <section class="card">
+      <h2>Driving Licence</h2>
+      <div class="kv">
+        <div class="k">Category</div>
+        <div class="v">CE</div>
+      </div>
+      <div class="kv">
+        <div class="k">Valid From</div>
+        <div class="v">21/02/2015</div>
+      </div>
+      <div class="kv">
+        <div class="k">Valid To</div>
+        <div class="v">15/02/2031</div>
+      </div>
+    </section>
+
+    <footer>
+      India • 28/09/2025
+    </footer>
+
+  </div>
 </body>
 </html>
