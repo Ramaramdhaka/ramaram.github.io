@@ -4,36 +4,38 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rama Ram — Professional Driver</title>
-  <meta name="description" content="Rama Ram — Professional HGV / Heavy Goods Vehicle Driver. Premium professional profile website." />
+  <meta name="description" content="Rama Ram — Professional HGV / Heavy Goods Vehicle Driver" />
 
   <style>
     :root{
-      --bg:#f6f8fc;
+      --bg:#f5f7fb;
       --paper:#ffffff;
       --paper-soft:#fbfcff;
       --text:#172033;
-      --muted:#6a7388;
+      --muted:#687287;
       --line:rgba(23,32,51,.10);
-      --line-strong:rgba(23,32,51,.16);
 
       --blue:#1f57d8;
       --blue-soft:rgba(31,87,216,.08);
-      --green:#158461;
-      --green-soft:rgba(21,132,97,.08);
-      --gold:#c4932f;
-      --gold-soft:rgba(196,147,47,.10);
+
+      --green:#14815f;
+      --green-soft:rgba(20,129,95,.08);
+
+      --gold:#c6942f;
+      --gold-soft:rgba(198,148,47,.10);
 
       --shadow-sm:0 8px 22px rgba(23,32,51,.05);
-      --shadow-md:0 18px 44px rgba(23,32,51,.08);
-      --shadow-lg:0 30px 70px rgba(23,32,51,.10);
+      --shadow-md:0 18px 40px rgba(23,32,51,.08);
+      --shadow-lg:0 28px 65px rgba(23,32,51,.10);
 
-      --radius:22px;
+      --radius:24px;
       --radius-lg:32px;
       --max:1180px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       color:var(--text);
@@ -41,21 +43,20 @@
       line-height:1.6;
       background:
         radial-gradient(1000px 600px at 0% 0%, rgba(31,87,216,.10), transparent 55%),
-        radial-gradient(900px 500px at 100% 10%, rgba(21,132,97,.08), transparent 55%),
+        radial-gradient(900px 500px at 100% 10%, rgba(20,129,95,.08), transparent 55%),
         linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
     }
 
-    img{display:block; max-width:100%}
+    img{max-width:100%; display:block}
     a{color:inherit; text-decoration:none}
     a:hover{text-decoration:none}
 
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding:18px 16px 72px;
+      padding:18px 16px 70px;
     }
 
-    /* NAV */
     .nav{
       position:sticky;
       top:12px;
@@ -68,7 +69,7 @@
       padding:12px 14px;
       border:1px solid var(--line);
       border-radius:999px;
-      background:rgba(255,255,255,.82);
+      background:rgba(255,255,255,.84);
       backdrop-filter:blur(12px);
       box-shadow:var(--shadow-sm);
     }
@@ -77,9 +78,9 @@
       display:flex;
       align-items:center;
       gap:10px;
+      font-size:15px;
       font-weight:900;
       letter-spacing:.2px;
-      font-size:15px;
     }
 
     .brandMark{
@@ -94,7 +95,6 @@
     .navLinks{
       display:flex;
       align-items:center;
-      justify-content:center;
       gap:4px;
       flex-wrap:wrap;
     }
@@ -113,7 +113,6 @@
       color:var(--text);
     }
 
-    /* BUTTONS */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -150,16 +149,15 @@
     .btnGreen{
       background:var(--green-soft);
       color:var(--green);
-      border-color:rgba(21,132,97,.14);
+      border-color:rgba(20,129,95,.14);
     }
 
     .btnGold{
       background:var(--gold-soft);
-      color:#8d6720;
-      border-color:rgba(196,147,47,.16);
+      color:#8c6820;
+      border-color:rgba(198,148,47,.16);
     }
 
-    /* HERO */
     .hero{
       margin-top:18px;
       padding:28px;
@@ -167,7 +165,7 @@
       border-radius:var(--radius-lg);
       background:
         radial-gradient(700px 260px at 8% 0%, rgba(31,87,216,.08), transparent 60%),
-        radial-gradient(560px 240px at 100% 0%, rgba(196,147,47,.08), transparent 60%),
+        radial-gradient(560px 240px at 100% 0%, rgba(198,148,47,.08), transparent 60%),
         rgba(255,255,255,.92);
       box-shadow:var(--shadow-lg);
       overflow:hidden;
@@ -175,7 +173,7 @@
 
     .heroGrid{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
+      grid-template-columns:1.1fr .9fr;
       gap:26px;
       align-items:center;
     }
@@ -203,9 +201,9 @@
 
     h1{
       margin:0;
-      font-size:clamp(38px, 5vw, 66px);
-      line-height:1.04;
-      letter-spacing:-1.2px;
+      font-size:clamp(38px, 5vw, 64px);
+      line-height:1.05;
+      letter-spacing:-1px;
       max-width:11ch;
     }
 
@@ -241,13 +239,11 @@
       font-weight:900;
     }
 
-    /* PREMIUM PROFILE CARD */
     .profileCard{
       position:relative;
       border:1px solid var(--line);
       border-radius:30px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.96));
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.96));
       padding:26px;
       box-shadow:var(--shadow-md);
       overflow:hidden;
@@ -258,8 +254,7 @@
       position:absolute;
       inset:0 0 auto 0;
       height:110px;
-      background:
-        linear-gradient(135deg, rgba(31,87,216,.08), rgba(196,147,47,.08));
+      background:linear-gradient(135deg, rgba(31,87,216,.08), rgba(198,148,47,.08));
       pointer-events:none;
     }
 
@@ -270,16 +265,13 @@
     }
 
     .photoFrame{
-      width:280px;
-      height:280px;
+      width:290px;
+      height:290px;
       margin:0 auto 18px;
       padding:8px;
       border-radius:50%;
-      background:
-        linear-gradient(135deg, rgba(31,87,216,.18), rgba(196,147,47,.14), rgba(21,132,97,.16));
-      box-shadow:
-        0 18px 40px rgba(23,32,51,.12),
-        inset 0 0 0 1px rgba(255,255,255,.7);
+      background:linear-gradient(135deg, rgba(31,87,216,.18), rgba(198,148,47,.14), rgba(20,129,95,.16));
+      box-shadow:0 18px 40px rgba(23,32,51,.12);
     }
 
     .avatar{
@@ -290,6 +282,7 @@
       object-position:center 18%;
       border:5px solid #fff;
       background:#eef2fa;
+      display:block;
     }
 
     .profileName{
@@ -316,7 +309,7 @@
       border-radius:999px;
       background:var(--green-soft);
       color:var(--green);
-      border:1px solid rgba(21,132,97,.14);
+      border:1px solid rgba(20,129,95,.14);
       font-size:13px;
       font-weight:900;
     }
@@ -368,7 +361,6 @@
       margin-top:18px;
     }
 
-    /* SECTIONS */
     section{
       margin-top:16px;
       padding:24px;
@@ -499,13 +491,12 @@
       padding:8px 12px;
       border-radius:999px;
       background:var(--gold-soft);
-      color:#8d6720;
-      border:1px solid rgba(196,147,47,.16);
+      color:#8c6820;
+      border:1px solid rgba(198,148,47,.16);
       font-size:13px;
       font-weight:900;
     }
 
-    /* EXPERIENCE */
     .timeline{
       display:grid;
       gap:14px;
@@ -564,14 +555,13 @@
       font-weight:800;
     }
 
-    /* RESPONSIVE */
     @media (max-width:1020px){
       .heroGrid{grid-template-columns:1fr}
+      h1{max-width:none}
       .photoFrame{
         width:250px;
         height:250px;
       }
-      h1{max-width:none}
     }
 
     @media (max-width:900px){
@@ -582,6 +572,7 @@
       }
       .navLinks{
         width:100%;
+        justify-content:center;
       }
     }
 
@@ -589,8 +580,8 @@
       .hero, section{padding:18px}
       .profileCard{padding:18px}
       .photoFrame{
-        width:210px;
-        height:210px;
+        width:215px;
+        height:215px;
       }
       h1{
         font-size:clamp(30px, 9vw, 46px);
@@ -656,10 +647,10 @@
         <aside class="profileCard">
           <div class="profileTop">
             <div class="photoFrame">
-              <img src="./Rama%20ram.jpg" alt="Profile Photo" class="avatar">
+              <img src="./ram.jpg?v=1" alt="Rama Ram Photo" class="avatar">
             </div>
 
-            <h2 class="profileName">Rama Ram</h2>
+            <div class="profileName">Rama Ram</div>
             <p class="profileRole">Professional Driver • Transport & Logistics</p>
             <div class="availability">Available for Driving Roles</div>
           </div>
