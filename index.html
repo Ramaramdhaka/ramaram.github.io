@@ -4,40 +4,45 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rama Ram — Professional Driver</title>
-  <meta name="description" content="Rama Ram — Professional HGV / Heavy Goods Vehicle Driver" />
+  <meta name="description" content="Rama Ram — Professional HGV / Heavy Goods Vehicle Driver. Premium professional profile website." />
 
   <style>
     :root{
-      --bg:#f5f7fb;
-      --card:#ffffff;
+      --bg:#f6f8fc;
+      --paper:#ffffff;
+      --paper-soft:#fbfcff;
       --text:#172033;
-      --muted:#667085;
+      --muted:#6a7388;
       --line:rgba(23,32,51,.10);
+      --line-strong:rgba(23,32,51,.16);
 
-      --blue:#1f56d8;
-      --blue-soft:rgba(31,86,216,.08);
+      --blue:#1f57d8;
+      --blue-soft:rgba(31,87,216,.08);
+      --green:#158461;
+      --green-soft:rgba(21,132,97,.08);
+      --gold:#c4932f;
+      --gold-soft:rgba(196,147,47,.10);
 
-      --green:#13825f;
-      --green-soft:rgba(19,130,95,.08);
+      --shadow-sm:0 8px 22px rgba(23,32,51,.05);
+      --shadow-md:0 18px 44px rgba(23,32,51,.08);
+      --shadow-lg:0 30px 70px rgba(23,32,51,.10);
 
-      --shadow:0 18px 45px rgba(23,32,51,.08);
-      --shadow-sm:0 8px 20px rgba(23,32,51,.06);
-
-      --radius:24px;
-      --max:1120px;
+      --radius:22px;
+      --radius-lg:32px;
+      --max:1180px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(900px 500px at 0% 0%, rgba(31,86,216,.10), transparent 55%),
-        radial-gradient(900px 500px at 100% 10%, rgba(19,130,95,.08), transparent 55%),
-        linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height:1.6;
+      background:
+        radial-gradient(1000px 600px at 0% 0%, rgba(31,87,216,.10), transparent 55%),
+        radial-gradient(900px 500px at 100% 10%, rgba(21,132,97,.08), transparent 55%),
+        linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
     }
 
     img{display:block; max-width:100%}
@@ -47,14 +52,14 @@
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding:18px 16px 70px;
+      padding:18px 16px 72px;
     }
 
     /* NAV */
     .nav{
       position:sticky;
       top:12px;
-      z-index:40;
+      z-index:50;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -64,7 +69,7 @@
       border:1px solid var(--line);
       border-radius:999px;
       background:rgba(255,255,255,.82);
-      backdrop-filter:blur(10px);
+      backdrop-filter:blur(12px);
       box-shadow:var(--shadow-sm);
     }
 
@@ -74,36 +79,41 @@
       gap:10px;
       font-weight:900;
       letter-spacing:.2px;
+      font-size:15px;
     }
 
-    .brand-dot{
+    .brandMark{
       width:14px;
       height:14px;
       border-radius:50%;
-      background:linear-gradient(135deg, var(--blue), var(--green));
-      box-shadow:0 0 0 6px rgba(31,86,216,.08);
+      background:conic-gradient(from 180deg, var(--blue), var(--green), var(--gold), var(--blue));
+      box-shadow:0 0 0 6px rgba(31,87,216,.08);
+      flex:0 0 auto;
     }
 
-    .navlinks{
+    .navLinks{
       display:flex;
       align-items:center;
+      justify-content:center;
       gap:4px;
       flex-wrap:wrap;
     }
 
-    .navlinks a{
+    .navLinks a{
       padding:9px 12px;
       border-radius:999px;
+      color:var(--muted);
       font-size:14px;
       font-weight:800;
-      color:var(--muted);
+      transition:.18s ease;
     }
 
-    .navlinks a:hover{
+    .navLinks a:hover{
       background:var(--blue-soft);
       color:var(--text);
     }
 
+    /* BUTTONS */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -113,54 +123,64 @@
       border-radius:999px;
       border:1px solid var(--line);
       background:#fff;
+      color:var(--text);
       font-weight:900;
-      box-shadow:0 6px 16px rgba(23,32,51,.05);
+      box-shadow:0 6px 18px rgba(23,32,51,.05);
       transition:.18s ease;
       cursor:pointer;
     }
 
-    .btn:hover{transform:translateY(-1px)}
-
-    .btn-primary{
-      background:linear-gradient(180deg, #2f67eb 0%, #1f56d8 100%);
-      color:#fff;
-      border-color:rgba(31,86,216,.35);
-      box-shadow:0 12px 24px rgba(31,86,216,.18);
+    .btn:hover{
+      transform:translateY(-1px);
     }
 
-    .btn-soft{
+    .btnPrimary{
+      background:linear-gradient(180deg, #2e67eb 0%, #1f57d8 100%);
+      color:#fff;
+      border-color:rgba(31,87,216,.35);
+      box-shadow:0 14px 26px rgba(31,87,216,.18);
+    }
+
+    .btnSoft{
       background:var(--blue-soft);
       color:var(--blue);
-      border-color:rgba(31,86,216,.12);
+      border-color:rgba(31,87,216,.12);
     }
 
-    .btn-green{
+    .btnGreen{
       background:var(--green-soft);
       color:var(--green);
-      border-color:rgba(19,130,95,.14);
+      border-color:rgba(21,132,97,.14);
+    }
+
+    .btnGold{
+      background:var(--gold-soft);
+      color:#8d6720;
+      border-color:rgba(196,147,47,.16);
     }
 
     /* HERO */
     .hero{
       margin-top:18px;
-      padding:26px;
+      padding:28px;
       border:1px solid var(--line);
-      border-radius:30px;
+      border-radius:var(--radius-lg);
       background:
-        radial-gradient(600px 240px at 10% 0%, rgba(31,86,216,.08), transparent 60%),
-        radial-gradient(500px 220px at 100% 0%, rgba(19,130,95,.06), transparent 60%),
+        radial-gradient(700px 260px at 8% 0%, rgba(31,87,216,.08), transparent 60%),
+        radial-gradient(560px 240px at 100% 0%, rgba(196,147,47,.08), transparent 60%),
         rgba(255,255,255,.92);
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-lg);
+      overflow:hidden;
     }
 
-    .hero-grid{
+    .heroGrid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:24px;
+      grid-template-columns:1.15fr .85fr;
+      gap:26px;
       align-items:center;
     }
 
-    .kicker{
+    .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:8px;
@@ -173,7 +193,7 @@
       margin-bottom:14px;
     }
 
-    .kicker::before{
+    .eyebrow::before{
       content:"";
       width:8px;
       height:8px;
@@ -183,35 +203,35 @@
 
     h1{
       margin:0;
-      font-size:clamp(34px, 5vw, 58px);
-      line-height:1.06;
-      letter-spacing:-1px;
-      max-width:10ch;
+      font-size:clamp(38px, 5vw, 66px);
+      line-height:1.04;
+      letter-spacing:-1.2px;
+      max-width:11ch;
     }
 
-    .lead{
-      margin:14px 0 0;
+    .heroLead{
+      margin:16px 0 0;
+      max-width:60ch;
       color:var(--muted);
       font-size:16px;
       font-weight:700;
-      max-width:58ch;
     }
 
-    .hero-actions{
+    .heroActions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .heroStats{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       margin-top:20px;
     }
 
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:18px;
-    }
-
-    .chip{
+    .heroStat{
       padding:9px 12px;
       border-radius:999px;
       border:1px solid var(--line);
@@ -221,24 +241,45 @@
       font-weight:900;
     }
 
-    /* PROFILE CARD */
-    .profile-card{
+    /* PREMIUM PROFILE CARD */
+    .profileCard{
+      position:relative;
       border:1px solid var(--line);
-      border-radius:28px;
-      background:linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
-      padding:24px;
-      box-shadow:var(--shadow-sm);
+      border-radius:30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.96));
+      padding:26px;
+      box-shadow:var(--shadow-md);
+      overflow:hidden;
+    }
+
+    .profileCard::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:110px;
+      background:
+        linear-gradient(135deg, rgba(31,87,216,.08), rgba(196,147,47,.08));
+      pointer-events:none;
+    }
+
+    .profileTop{
+      position:relative;
+      z-index:1;
       text-align:center;
     }
 
-    .photo-wrap{
-      width:230px;
-      height:230px;
-      margin:0 auto 16px;
-      padding:7px;
+    .photoFrame{
+      width:280px;
+      height:280px;
+      margin:0 auto 18px;
+      padding:8px;
       border-radius:50%;
-      background:linear-gradient(135deg, rgba(31,86,216,.14), rgba(19,130,95,.12));
-      box-shadow:0 14px 35px rgba(23,32,51,.12);
+      background:
+        linear-gradient(135deg, rgba(31,87,216,.18), rgba(196,147,47,.14), rgba(21,132,97,.16));
+      box-shadow:
+        0 18px 40px rgba(23,32,51,.12),
+        inset 0 0 0 1px rgba(255,255,255,.7);
     }
 
     .avatar{
@@ -247,26 +288,26 @@
       border-radius:50%;
       object-fit:cover;
       object-position:center 18%;
-      border:4px solid #fff;
-      background:#eef3fb;
+      border:5px solid #fff;
+      background:#eef2fa;
     }
 
-    .profile-name{
+    .profileName{
       margin:0;
-      font-size:28px;
-      line-height:1.15;
-      font-weight:900;
-      letter-spacing:-.4px;
+      font-size:30px;
+      line-height:1.1;
+      font-weight:1000;
+      letter-spacing:-.5px;
     }
 
-    .profile-role{
-      margin:6px 0 0;
+    .profileRole{
+      margin:8px 0 0;
       color:var(--muted);
       font-size:14px;
       font-weight:800;
     }
 
-    .status{
+    .availability{
       display:inline-flex;
       align-items:center;
       gap:8px;
@@ -275,12 +316,12 @@
       border-radius:999px;
       background:var(--green-soft);
       color:var(--green);
-      border:1px solid rgba(19,130,95,.14);
+      border:1px solid rgba(21,132,97,.14);
       font-size:13px;
       font-weight:900;
     }
 
-    .status::before{
+    .availability::before{
       content:"";
       width:8px;
       height:8px;
@@ -288,55 +329,57 @@
       background:var(--green);
     }
 
-    .mini-grid{
+    .contactCards{
+      position:relative;
+      z-index:1;
       display:grid;
       gap:10px;
       margin-top:18px;
+    }
+
+    .miniCard{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+      padding:13px 14px;
       text-align:left;
     }
 
-    .mini-box{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:12px 14px;
-      background:#fff;
-    }
-
-    .mini-label{
-      margin-bottom:4px;
+    .miniLabel{
       font-size:12px;
       font-weight:900;
-      letter-spacing:.4px;
-      text-transform:uppercase;
       color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.45px;
+      margin-bottom:4px;
     }
 
-    .mini-value{
+    .miniValue{
       font-size:15px;
       font-weight:900;
       word-break:break-word;
     }
 
-    .profile-actions{
+    .profileActions{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
       justify-content:center;
+      gap:10px;
       margin-top:18px;
     }
 
-    /* SECTION */
+    /* SECTIONS */
     section{
       margin-top:16px;
       padding:24px;
       border:1px solid var(--line);
-      border-radius:30px;
+      border-radius:var(--radius-lg);
       background:rgba(255,255,255,.92);
       box-shadow:var(--shadow-sm);
       scroll-margin-top:90px;
     }
 
-    .section-head{
+    .sectionHead{
       display:flex;
       align-items:flex-end;
       justify-content:space-between;
@@ -345,13 +388,13 @@
       margin-bottom:14px;
     }
 
-    .eyebrow{
+    .sectionEyebrow{
       margin:0 0 6px;
       font-size:12px;
       font-weight:900;
       letter-spacing:.5px;
-      text-transform:uppercase;
       color:var(--blue);
+      text-transform:uppercase;
     }
 
     h2{
@@ -361,20 +404,20 @@
       letter-spacing:-.4px;
     }
 
-    .section-sub{
+    .sectionSub{
       margin:6px 0 0;
       color:var(--muted);
       font-size:14px;
       font-weight:700;
     }
 
-    .grid-2{
+    .grid2{
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:14px;
     }
 
-    .grid-3{
+    .grid3{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:14px;
@@ -382,13 +425,19 @@
 
     .card{
       border:1px solid var(--line);
-      border-radius:22px;
+      border-radius:24px;
+      background:linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 100%);
       padding:18px;
-      background:linear-gradient(180deg, #fff 0%, #fbfcff 100%);
       height:100%;
+      transition:.18s ease;
     }
 
-    .card-title{
+    .card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 26px rgba(23,32,51,.05);
+    }
+
+    .cardTitle{
       display:flex;
       align-items:center;
       gap:10px;
@@ -396,19 +445,19 @@
     }
 
     .icon{
-      width:40px;
-      height:40px;
-      border-radius:14px;
+      width:42px;
+      height:42px;
+      flex:0 0 42px;
       display:grid;
       place-items:center;
+      border-radius:16px;
       background:var(--blue-soft);
       color:var(--blue);
-      border:1px solid rgba(31,86,216,.10);
+      border:1px solid rgba(31,87,216,.10);
       font-size:18px;
-      flex:0 0 40px;
     }
 
-    .card-title strong{
+    .cardTitle strong{
       font-size:16px;
       line-height:1.2;
     }
@@ -427,7 +476,7 @@
 
     .list li{margin:7px 0}
 
-    .badge-row{
+    .badgeRow{
       display:flex;
       flex-wrap:wrap;
       gap:8px;
@@ -449,13 +498,14 @@
       align-items:center;
       padding:8px 12px;
       border-radius:999px;
-      background:var(--green-soft);
-      color:var(--green);
-      border:1px solid rgba(19,130,95,.14);
+      background:var(--gold-soft);
+      color:#8d6720;
+      border:1px solid rgba(196,147,47,.16);
       font-size:13px;
       font-weight:900;
     }
 
+    /* EXPERIENCE */
     .timeline{
       display:grid;
       gap:14px;
@@ -464,7 +514,7 @@
     .job{
       position:relative;
       border:1px solid var(--line);
-      border-radius:24px;
+      border-radius:26px;
       background:linear-gradient(180deg, #fff 0%, #fbfcff 100%);
       padding:18px 18px 18px 22px;
       overflow:hidden;
@@ -477,10 +527,10 @@
       top:0;
       bottom:0;
       width:4px;
-      background:linear-gradient(180deg, var(--blue), var(--green));
+      background:linear-gradient(180deg, var(--blue), var(--gold), var(--green));
     }
 
-    .job-top{
+    .jobTop{
       display:flex;
       align-items:flex-start;
       justify-content:space-between;
@@ -488,13 +538,13 @@
       flex-wrap:wrap;
     }
 
-    .job-title{
+    .jobTitle{
       font-size:17px;
       font-weight:900;
       line-height:1.3;
     }
 
-    .job-date{
+    .jobDate{
       padding:7px 10px;
       border-radius:999px;
       border:1px solid var(--line);
@@ -514,32 +564,43 @@
       font-weight:800;
     }
 
-    @media (max-width:980px){
-      .hero-grid{grid-template-columns:1fr}
+    /* RESPONSIVE */
+    @media (max-width:1020px){
+      .heroGrid{grid-template-columns:1fr}
+      .photoFrame{
+        width:250px;
+        height:250px;
+      }
+      h1{max-width:none}
     }
 
     @media (max-width:900px){
-      .grid-2,.grid-3{grid-template-columns:1fr}
-      .nav{border-radius:24px}
-      .navlinks{width:100%; justify-content:center}
-      .photo-wrap{
-        width:200px;
-        height:200px;
+      .grid2,.grid3{grid-template-columns:1fr}
+      .nav{
+        border-radius:28px;
+        justify-content:center;
+      }
+      .navLinks{
+        width:100%;
       }
     }
 
     @media (max-width:560px){
-      .photo-wrap{
-        width:180px;
-        height:180px;
-      }
       .hero, section{padding:18px}
+      .profileCard{padding:18px}
+      .photoFrame{
+        width:210px;
+        height:210px;
+      }
+      h1{
+        font-size:clamp(30px, 9vw, 46px);
+      }
     }
 
     @media print{
-      .nav,.hero-actions,.profile-actions{display:none !important}
+      .nav,.heroActions,.profileActions{display:none !important}
       body{background:#fff}
-      .hero,section,.card,.profile-card,.job{box-shadow:none}
+      .hero,section,.card,.profileCard,.job{box-shadow:none}
       .wrap{padding:0}
     }
   </style>
@@ -549,11 +610,11 @@
 
     <nav class="nav">
       <div class="brand">
-        <span class="brand-dot"></span>
+        <span class="brandMark"></span>
         <span>Rama Ram</span>
       </div>
 
-      <div class="navlinks">
+      <div class="navLinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -563,81 +624,83 @@
         <a href="#contact">Contact</a>
       </div>
 
-      <a class="btn btn-primary" href="./rama-cv.pdf" target="_blank" rel="noreferrer">Open CV</a>
+      <a class="btn btnPrimary" href="./rama-cv.pdf" target="_blank" rel="noreferrer">Open CV</a>
     </nav>
 
     <header class="hero" id="home">
-      <div class="hero-grid">
+      <div class="heroGrid">
         <div>
-          <div class="kicker">Professional Driver • Safety First</div>
-          <h1>Reliable HGV Driver</h1>
+          <div class="eyebrow">Professional Driver • Premium Profile</div>
+          <h1>Reliable HGV Driver With A Strong Professional Presence</h1>
 
-          <p class="lead">
+          <p class="heroLead">
             Dedicated and safety-conscious professional driver with 9+ years of experience in transport and logistics.
             Focused on punctual delivery, disciplined driving, responsible load handling and dependable long-route operations.
           </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="./rama-cv.pdf" target="_blank" rel="noreferrer">View CV</a>
-            <a class="btn btn-soft" href="#experience">Experience</a>
-            <a class="btn btn-green" href="#contact">Contact Now</a>
-            <button class="btn" onclick="window.print()">Print</button>
+          <div class="heroActions">
+            <a class="btn btnPrimary" href="./rama-cv.pdf" target="_blank" rel="noreferrer">View CV</a>
+            <a class="btn btnSoft" href="#experience">View Experience</a>
+            <a class="btn btnGreen" href="#contact">Contact Now</a>
+            <button class="btn btnGold" onclick="window.print()">Print Profile</button>
           </div>
 
-          <div class="chips">
-            <span class="chip">9+ Years Experience</span>
-            <span class="chip">CE Category</span>
-            <span class="chip">Hazardous Material Experience</span>
-            <span class="chip">Based in India</span>
+          <div class="heroStats">
+            <span class="heroStat">9+ Years Experience</span>
+            <span class="heroStat">CE Category</span>
+            <span class="heroStat">Hazardous Material Experience</span>
+            <span class="heroStat">India Based</span>
           </div>
         </div>
 
-        <aside class="profile-card">
-          <div class="photo-wrap">
-            <img src="./Rama%20ram.jpg" alt="Rama Ram Photo" class="avatar">
+        <aside class="profileCard">
+          <div class="profileTop">
+            <div class="photoFrame">
+              <img src="./Rama%20ram.jpg" alt="Profile Photo" class="avatar">
+            </div>
+
+            <h2 class="profileName">Rama Ram</h2>
+            <p class="profileRole">Professional Driver • Transport & Logistics</p>
+            <div class="availability">Available for Driving Roles</div>
           </div>
 
-          <h2 class="profile-name">Rama Ram</h2>
-          <p class="profile-role">Professional Driver • Transport & Logistics</p>
-          <div class="status">Available for driving roles</div>
-
-          <div class="mini-grid">
-            <div class="mini-box">
-              <div class="mini-label">Phone</div>
-              <div class="mini-value"><a href="tel:+919571160487">(+91) 9571160487</a></div>
+          <div class="contactCards">
+            <div class="miniCard">
+              <div class="miniLabel">Phone</div>
+              <div class="miniValue"><a href="tel:+919571160487">(+91) 9571160487</a></div>
             </div>
 
-            <div class="mini-box">
-              <div class="mini-label">Email</div>
-              <div class="mini-value"><a href="mailto:ramaramdhakakosariya@gmail.com">ramaramdhakakosariya@gmail.com</a></div>
+            <div class="miniCard">
+              <div class="miniLabel">Email</div>
+              <div class="miniValue"><a href="mailto:ramaramdhakakosariya@gmail.com">ramaramdhakakosariya@gmail.com</a></div>
             </div>
 
-            <div class="mini-box">
-              <div class="mini-label">Website</div>
-              <div class="mini-value"><a href="https://www.apanarr.weebly.com" target="_blank" rel="noreferrer">www.apanarr.weebly.com</a></div>
+            <div class="miniCard">
+              <div class="miniLabel">Website</div>
+              <div class="miniValue"><a href="https://www.apanarr.weebly.com" target="_blank" rel="noreferrer">www.apanarr.weebly.com</a></div>
             </div>
           </div>
 
-          <div class="profile-actions">
-            <a class="btn btn-primary" href="./rama-cv.pdf" target="_blank" rel="noreferrer">Open CV</a>
-            <a class="btn btn-green" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
+          <div class="profileActions">
+            <a class="btn btnPrimary" href="./rama-cv.pdf" target="_blank" rel="noreferrer">Open CV</a>
+            <a class="btn btnGreen" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
           </div>
         </aside>
       </div>
     </header>
 
     <section id="about">
-      <div class="section-head">
+      <div class="sectionHead">
         <div>
-          <p class="eyebrow">Profile</p>
+          <p class="sectionEyebrow">Profile</p>
           <h2>About Me</h2>
-          <p class="section-sub">A clean, simple and professional European-style presentation.</p>
+          <p class="sectionSub">A clean, premium and elegant European-style presentation.</p>
         </div>
       </div>
 
-      <div class="grid-2">
+      <div class="grid2">
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">👤</span>
             <strong>Professional Summary</strong>
           </div>
@@ -649,7 +712,7 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">📍</span>
             <strong>Personal Information</strong>
           </div>
@@ -665,17 +728,17 @@
     </section>
 
     <section id="services">
-      <div class="section-head">
+      <div class="sectionHead">
         <div>
-          <p class="eyebrow">Services</p>
+          <p class="sectionEyebrow">Services</p>
           <h2>What I Do</h2>
-          <p class="section-sub">Clear and professional transport service blocks.</p>
+          <p class="sectionSub">Clear and professional transport service blocks.</p>
         </div>
       </div>
 
-      <div class="grid-3">
+      <div class="grid3">
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">🚛</span>
             <strong>Heavy Transport</strong>
           </div>
@@ -685,7 +748,7 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">🧪</span>
             <strong>Hazardous Materials</strong>
           </div>
@@ -695,7 +758,7 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">🗺️</span>
             <strong>Navigation & Routing</strong>
           </div>
@@ -707,20 +770,20 @@
     </section>
 
     <section id="experience">
-      <div class="section-head">
+      <div class="sectionHead">
         <div>
-          <p class="eyebrow">Career</p>
+          <p class="sectionEyebrow">Career</p>
           <h2>Work Experience</h2>
-          <p class="section-sub">Simple timeline with a strong professional look.</p>
+          <p class="sectionSub">Professional experience shown in a clean luxury-style timeline.</p>
         </div>
         <span class="tag">9+ Years Experience</span>
       </div>
 
       <div class="timeline">
         <div class="job">
-          <div class="job-top">
-            <div class="job-title">Hazardous Materials Driver — Shree Ravray Logistics</div>
-            <div class="job-date">01/08/2015 – 30/12/2019</div>
+          <div class="jobTop">
+            <div class="jobTitle">Hazardous Materials Driver — Shree Ravray Logistics</div>
+            <div class="jobDate">01/08/2015 – 30/12/2019</div>
           </div>
           <ul class="list" style="margin-top:10px;">
             <li>Loaded chemicals from Kandla / Mundra Port and transported them to multiple destinations across India.</li>
@@ -729,9 +792,9 @@
         </div>
 
         <div class="job">
-          <div class="job-top">
-            <div class="job-title">Heavy Goods Vehicle Driver — UEM India Pvt. Limited</div>
-            <div class="job-date">15/02/2020 – Current</div>
+          <div class="jobTop">
+            <div class="jobTitle">Heavy Goods Vehicle Driver — UEM India Pvt. Limited</div>
+            <div class="jobDate">15/02/2020 – Current</div>
           </div>
           <ul class="list" style="margin-top:10px;">
             <li>Container delivery from Gujarat ports to HPCL Pachpadra and Rajasthan-side supply points.</li>
@@ -742,21 +805,21 @@
     </section>
 
     <section id="skills">
-      <div class="section-head">
+      <div class="sectionHead">
         <div>
-          <p class="eyebrow">Strengths</p>
+          <p class="sectionEyebrow">Strengths</p>
           <h2>Skills & Qualifications</h2>
-          <p class="section-sub">Easy to read, clean and fully professional.</p>
+          <p class="sectionSub">Easy to read, premium-looking and fully professional.</p>
         </div>
       </div>
 
-      <div class="grid-2">
+      <div class="grid2">
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">✅</span>
             <strong>Core Skills</strong>
           </div>
-          <div class="badge-row">
+          <div class="badgeRow">
             <span class="badge">Safety & Compliance</span>
             <span class="badge">Traffic Rule Knowledge</span>
             <span class="badge">Punctual & Reliable</span>
@@ -767,11 +830,11 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">🧰</span>
             <strong>Tools & Practical Ability</strong>
           </div>
-          <div class="badge-row">
+          <div class="badgeRow">
             <span class="badge">Google Maps</span>
             <span class="badge">GPS Tracking</span>
             <span class="badge">Navigation</span>
@@ -781,9 +844,9 @@
         </div>
       </div>
 
-      <div class="grid-2" style="margin-top:14px;">
+      <div class="grid2" style="margin-top:14px;">
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">🪪</span>
             <strong>Driving Qualification</strong>
           </div>
@@ -795,7 +858,7 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">🎓</span>
             <strong>Education</strong>
           </div>
@@ -810,18 +873,18 @@
     </section>
 
     <section id="licence">
-      <div class="section-head">
+      <div class="sectionHead">
         <div>
-          <p class="eyebrow">Verification</p>
+          <p class="sectionEyebrow">Verification</p>
           <h2>Driving Licence</h2>
-          <p class="section-sub">Quick view with licence PDF access.</p>
+          <p class="sectionSub">Quick licence summary with PDF access.</p>
         </div>
-        <a class="btn btn-primary" href="./licence.pdf" target="_blank" rel="noreferrer">Open Licence PDF</a>
+        <a class="btn btnPrimary" href="./licence.pdf" target="_blank" rel="noreferrer">Open Licence PDF</a>
       </div>
 
-      <div class="grid-2">
+      <div class="grid2">
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">🪪</span>
             <strong>Licence Details</strong>
           </div>
@@ -837,12 +900,12 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">🚚</span>
             <strong>Vehicle Classes</strong>
           </div>
 
-          <div class="badge-row">
+          <div class="badgeRow">
             <span class="badge">MCWG (NT)</span>
             <span class="badge">LMV (NT)</span>
             <span class="badge">TRANS (TR)</span>
@@ -858,33 +921,34 @@
     </section>
 
     <section id="contact">
-      <div class="section-head">
+      <div class="sectionHead">
         <div>
-          <p class="eyebrow">Contact</p>
+          <p class="sectionEyebrow">Contact</p>
           <h2>Get In Touch</h2>
-          <p class="section-sub">Fast and simple contact actions.</p>
+          <p class="sectionSub">Fast and direct contact options for work opportunities.</p>
         </div>
       </div>
 
-      <div class="grid-2">
+      <div class="grid2">
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">📞</span>
             <strong>Direct Contact</strong>
           </div>
+
           <p class="muted" style="margin:0 0 12px 0;">
             For job opportunities, transport work or driver hiring, use any option below.
           </p>
 
-          <div class="hero-actions" style="margin-top:0;">
-            <a class="btn btn-primary" href="tel:+919571160487">Call Now</a>
-            <a class="btn btn-green" href="mailto:ramaramdhakakosariya@gmail.com">Send Email</a>
-            <a class="btn btn-soft" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
+          <div class="heroActions" style="margin-top:0;">
+            <a class="btn btnPrimary" href="tel:+919571160487">Call Now</a>
+            <a class="btn btnGreen" href="mailto:ramaramdhakakosariya@gmail.com">Send Email</a>
+            <a class="btn btnSoft" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-title">
+          <div class="cardTitle">
             <span class="icon">🔗</span>
             <strong>Online Links</strong>
           </div>
@@ -898,7 +962,7 @@
     </section>
 
     <footer>
-      © <span id="year"></span> Rama Ram • Clean professional web presence
+      © <span id="year"></span> Rama Ram • Premium professional web presence
     </footer>
   </div>
 
