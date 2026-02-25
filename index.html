@@ -276,7 +276,7 @@
       height:100%;
       border-radius:50%;
       object-fit:cover;
-      object-position:center 18%;
+      object-position:center center;
       border:5px solid #fff;
       background:#eef2fa;
       display:block;
@@ -644,7 +644,7 @@
         <aside class="profileCard">
           <div class="profileTop">
             <div class="photoFrame">
-              <img src="./ram.jpg?v=2" alt="Rama Ram Photo" class="avatar">
+              <img src="./ram.jpg" alt="Rama Ram Photo" class="avatar">
             </div>
 
             <div class="profileName">Rama Ram</div>
@@ -962,7 +962,6 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* Inline CV download */
     const cvBase64 = "JVBERi0xLjQKJcTl8uXrp/Og0MTGCjEgMCBvYmoKPDwgL1R5cGUgL0NhdGFsb2cgL1BhZ2VzIDIgMCBSID4+CmVuZG9iagoyIDAgb2JqCjw8IC9UeXBlIC9QYWdlcyAvS2lkcyBbMyAwIFJdIC9Db3VudCAxID4+CmVuZG9iagozIDAgb2JqCjw8IC9UeXBlIC9QYWdlIC9QYXJlbnQgMiAwIFIgL01lZGlhQm94IFswIDAgNTk1IDg0Ml0gL0NvbnRlbnRzIDQgMCBSIC9SZXNvdXJjZXMgPDwgL0ZvbnQgPDwgL0YxIDUgMCBSID4+ID4+ID4+CmVuZG9iago0IDAgb2JqCjw8IC9MZW5ndGggNjI0ID4+CnN0cmVhbQpCVAovRjEgMjQgVGYKNzIgNzYwIFRkCihSYW1hIFJhbSAtIENWKSBUagovRjEgMTQgVGYKNzIgNzIwIFRkCihQcm9mZXNzaW9uYWwgRHJpdmVyKSBUagoxIDAgMCAxIDcyIDY4MCBUbQooUGhvbmU6ICs5MSA5NTcxMTYwNDg3KSBUagoxIDAgMCAxIDcyIDY1MiBUbQooRW1haWw6IHJhbWFyYW1kaGFrYWtvc2FyaXlhQGdtYWlsLmNvbSkgVGoKMSAwIDAgMSA3MiA2MjQgVG0KKExvY2F0aW9uOiBCYXJtZXIsIFJhamFzdGhhbiwgSW5kaWEpIFRqCjEgMCAwIDEgNzIgNTg0IFRtCihFeHBlcmllbmNlOiA5KyB5ZWFycyBpbiB0cmFuc3BvcnQgYW5kIGxvZ2lzdGljcykgVGoKMSAwIDAgMSA3MiA1NTYgVG0KKFJvbGU6IEhHViAvIEhlYXZ5IEdvb2RzIFZlaGljbGUgRHJpdmVyKSBUagoxIDAgMCAxIDcyIDUxNiBUbQooS2V5IFNraWxsczopIFRqCi9GMSAxMiBUZgoxIDAgMCAxIDkyIDQ4OCBUbQooLSBTYWZldHkgJiBDb21wbGlhbmNlKSBUagoxIDAgMCAxIDkyIDQ2NCBUbQooLSBUcmFmZmljIFJ1bGUgS25vd2xlZGdlKSBUagoxIDAgMCAxIDkyIDQ0MCBUbQooLSBMb25nIFJvdXRlIERyaXZpbmcpIFRqCjEgMCAwIDEgOTIgNDE2IFRtCihbLSBdIEdQUyAvIEdvb2dsZSBNYXBzKSBUagoxIDAgMCAxIDkyIDM5MiBUbQooLSBDdXN0b21lciBTZXJ2aWNlKSBUagoxIDAgMCAxIDcyIDM1MiBUbQooRXhwZXJpZW5jZTopIFRqCjEgMCAwIDEgOTIgMzI0IFRtCihTaHJlZSBSYXZyYXkgTG9naXN0aWNzIC0gSGF6YXJkb3VzIE1hdGVyaWFscyBEcml2ZXIpIFRqCjEgMCAwIDEgOTIgMzAwIFRtCigwMS8wOC8yMDE1IC0gMzAvMTIvMjAxOSkgVGoKMSAwIDAgMSA5MiAyNzYgVG0KKFVFTSBJbmRpYSBQdnQuIExpbWl0ZWQgLSBIZWF2eSBHb29kcyBWZWhpY2xlIERyaXZlcikgVGoKMSAwIDAgMSA5MiAyNTIgVG0KKDE1LzAyLzIwMjAgLSBDdXJyZW50KSBUagoxIDAgMCAxIDcyIDIxMiBUbQooRWR1Y2F0aW9uOiAxMnRoIChBcnRzKSAtIEJvYXJkIG9mIFNlY29uZGFyeSBFZHVjYXRpb24gUmFqYXN0aGFuKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCjUgMCBvYmoKPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhID4+CmVuZG9iago2IDAgb2JqCjw8IC9Qcm9kdWNlciAoQ2hhdEdQVCkgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MDIyNTAwMDAwMFopID4+CmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTUgMDAwMDAgbiAKMDAwMDAwMDA2NCAwMDAwMCBuIAowMDAwMDAwMTIxIDAwMDAwIG4gCjAwMDAwMDAyNDcgMDAwMDAgbiAKMDAwMDAwMDkyMiAwMDAwMCBuIAowMDAwMDAxMDAyIDAwMDAwIG4gCnRyYWlsZXIKPDwgL1NpemUgNyAvUm9vdCAxIDAgUiAvSW5mbyA2IDAgUiA+PgpzdGFydHhyZWYKMTA2NQolJUVPRg==";
 
     function downloadInlineCV() {
