@@ -4,330 +4,666 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rama Ram — Professional Driver</title>
-  <meta name="description" content="Rama Ram — HGV / Heavy Goods Vehicle Driver. Safety-first transport & logistics." />
+  <meta name="description" content="Rama Ram — Professional HGV / Heavy Goods Vehicle Driver. Safety-first transport, logistics and long-route delivery." />
 
   <style>
     :root{
-      --bg:#f6f7fb;
+      --bg:#f4f6fb;
       --paper:#ffffff;
-      --text:#121826;
-      --muted:#5b6476;
-      --line:rgba(18,24,38,.10);
-      --shadow: 0 14px 40px rgba(18,24,38,.10);
-      --shadow2: 0 8px 24px rgba(18,24,38,.10);
+      --paper-2:#fbfcff;
+      --text:#172033;
+      --muted:#677187;
+      --line:rgba(23,32,51,.10);
+      --line-strong:rgba(23,32,51,.16);
 
-      --accent:#2a60ff;
-      --accent2:#1bbf8a;
-      --accent3:#ffb020;
+      --accent:#204ecf;
+      --accent-soft:rgba(32,78,207,.08);
+      --green:#138a63;
+      --green-soft:rgba(19,138,99,.08);
+      --gold:#c9952a;
+      --gold-soft:rgba(201,149,42,.08);
+
+      --shadow-sm:0 8px 22px rgba(23,32,51,.06);
+      --shadow-md:0 14px 38px rgba(23,32,51,.08);
+      --shadow-lg:0 24px 60px rgba(23,32,51,.10);
 
       --radius:18px;
-      --radius2:22px;
-
-      --max:1080px;
+      --radius-lg:26px;
+      --max:1160px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       color:var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.65;
       background:
-        radial-gradient(1200px 600px at 15% 0%, rgba(42,96,255,.12), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(27,191,138,.10), transparent 55%),
-        var(--bg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue";
-      line-height:1.6;
+        radial-gradient(900px 500px at 0% 0%, rgba(32,78,207,.10), transparent 55%),
+        radial-gradient(900px 500px at 100% 10%, rgba(19,138,99,.08), transparent 55%),
+        linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%);
     }
+
+    img{max-width:100%; display:block}
     a{color:inherit; text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 64px}
+    a:hover{text-decoration:none}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 16px 70px;
+    }
 
     /* NAV */
     .nav{
-      position:sticky; top:12px; z-index:50;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
+      position:sticky;
+      top:12px;
+      z-index:60;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
       padding:12px 14px;
-      background:rgba(255,255,255,.75);
-      backdrop-filter: blur(10px);
       border:1px solid var(--line);
       border-radius:999px;
-      box-shadow: var(--shadow2);
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
-    .dot{
-      width:12px; height:12px; border-radius:99px;
-      background: conic-gradient(from 180deg, var(--accent), var(--accent2), var(--accent3), var(--accent));
-      box-shadow: 0 0 0 6px rgba(42,96,255,.10);
-    }
-    .navlinks{
-      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-      font-weight:800; color:var(--muted);
-    }
-    .navlinks a{padding:8px 10px; border-radius:999px}
-    .navlinks a:hover{background:rgba(42,96,255,.08); color:var(--text); text-decoration:none}
-    .cta{
-      display:flex; align-items:center; gap:10px;
-    }
-    .btn{
-      border:1px solid var(--line);
-      background:var(--paper);
-      padding:10px 14px;
-      border-radius:999px;
-      font-weight:900;
-      cursor:pointer;
-      box-shadow: 0 6px 18px rgba(18,24,38,.06);
-      display:inline-flex; align-items:center; gap:10px;
-    }
-    .btn:hover{border-color:rgba(42,96,255,.25)}
-    .btnPrimary{
-      border-color:rgba(42,96,255,.25);
-      background: linear-gradient(180deg, rgba(42,96,255,.12), rgba(42,96,255,.06));
-    }
-    .btnGreen{
-      border-color:rgba(27,191,138,.28);
-      background: linear-gradient(180deg, rgba(27,191,138,.12), rgba(27,191,138,.06));
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(14px);
+      box-shadow:var(--shadow-sm);
     }
 
-    /* Mobile menu */
-    .hamb{
-      display:none;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:max-content;
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+
+    .brandMark{
+      width:14px;
+      height:14px;
+      border-radius:999px;
+      background:conic-gradient(from 180deg, var(--accent), var(--green), var(--gold), var(--accent));
+      box-shadow:0 0 0 6px rgba(32,78,207,.08);
+      flex:0 0 auto;
+    }
+
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:4px;
+      flex-wrap:wrap;
+    }
+
+    .navlinks a{
       padding:10px 12px;
       border-radius:999px;
+      color:var(--muted);
+      font-weight:800;
+      font-size:14px;
+      transition:.18s ease;
+    }
+
+    .navlinks a:hover{
+      background:var(--accent-soft);
+      color:var(--text);
+    }
+
+    .navActions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .menuBtn{
+      display:none;
       border:1px solid var(--line);
       background:var(--paper);
-      cursor:pointer;
+      color:var(--text);
+      border-radius:999px;
+      padding:10px 12px;
       font-weight:900;
+      cursor:pointer;
     }
+
     .mobilePanel{
       display:none;
       margin-top:10px;
-      background:rgba(255,255,255,.85);
-      backdrop-filter: blur(10px);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
       padding:10px;
-      box-shadow: var(--shadow2);
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(12px);
+      box-shadow:var(--shadow-sm);
     }
+
     .mobilePanel a{
       display:block;
       padding:12px 12px;
       border-radius:12px;
-      font-weight:900;
       color:var(--muted);
+      font-weight:800;
     }
-    .mobilePanel a:hover{background:rgba(42,96,255,.08); color:var(--text); text-decoration:none}
 
-    @media (max-width:860px){
+    .mobilePanel a:hover{
+      background:var(--accent-soft);
+      color:var(--text);
+    }
+
+    @media (max-width:920px){
       .navlinks{display:none}
-      .hamb{display:inline-flex}
-      .cta .btn{display:none}
+      .menuBtn{display:inline-flex}
+      .navActions .btn:not(.menuBtn){display:none}
+    }
+
+    /* BUTTONS */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--paper);
+      color:var(--text);
+      font-weight:900;
+      letter-spacing:.1px;
+      box-shadow:0 6px 18px rgba(23,32,51,.05);
+      transition:transform .16s ease, border-color .16s ease, background .16s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(23,32,51,.20);
+    }
+
+    .btnPrimary{
+      background:linear-gradient(180deg, #2a5de4 0%, #204ecf 100%);
+      color:#fff;
+      border-color:rgba(32,78,207,.35);
+      box-shadow:0 12px 24px rgba(32,78,207,.22);
+    }
+
+    .btnPrimary:hover{
+      border-color:rgba(32,78,207,.55);
+    }
+
+    .btnSoft{
+      background:var(--accent-soft);
+      color:var(--accent);
+      border-color:rgba(32,78,207,.15);
+    }
+
+    .btnGreen{
+      background:var(--green-soft);
+      color:var(--green);
+      border-color:rgba(19,138,99,.16);
     }
 
     /* HERO */
     .hero{
       margin-top:18px;
-      background:rgba(255,255,255,.85);
+      padding:24px;
       border:1px solid var(--line);
-      border-radius: var(--radius2);
-      padding:22px;
-      box-shadow: var(--shadow);
+      border-radius:var(--radius-lg);
+      background:
+        radial-gradient(600px 240px at 10% 0%, rgba(32,78,207,.10), transparent 60%),
+        radial-gradient(500px 220px at 100% 0%, rgba(19,138,99,.08), transparent 60%),
+        rgba(255,255,255,.86);
+      box-shadow:var(--shadow-lg);
       overflow:hidden;
       position:relative;
     }
-    .hero::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(700px 220px at 20% 0%, rgba(42,96,255,.18), transparent 60%),
-        radial-gradient(600px 220px at 90% 10%, rgba(27,191,138,.14), transparent 60%);
-      pointer-events:none;
-    }
+
     .heroGrid{
-      position:relative;
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
+      grid-template-columns:1.2fr .8fr;
+      gap:20px;
       align-items:stretch;
+      position:relative;
+      z-index:1;
     }
-    @media (max-width:900px){
+
+    @media (max-width:980px){
       .heroGrid{grid-template-columns:1fr}
     }
+
     .kicker{
-      font-weight:900;
-      letter-spacing:.2px;
-      color:rgba(42,96,255,.95);
-      background:rgba(42,96,255,.10);
-      display:inline-block;
-      padding:6px 10px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
       border-radius:999px;
-      margin-bottom:10px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.18px;
+      margin-bottom:12px;
     }
-    h1{
-      margin:0 0 10px 0;
-      font-size: clamp(30px, 4vw, 52px);
-      letter-spacing:-.6px;
-      line-height:1.1;
+
+    .kicker::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 5px rgba(32,78,207,.10);
     }
-    .sub{
+
+    .hero h1{
       margin:0;
+      font-size:clamp(34px, 5vw, 62px);
+      line-height:1.06;
+      letter-spacing:-1px;
+      max-width:10ch;
+    }
+
+    .heroLead{
+      margin:14px 0 0 0;
+      max-width:62ch;
       color:var(--muted);
+      font-size:16px;
       font-weight:700;
-      max-width:60ch;
     }
+
     .heroActions{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
     }
-    .chips{
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin-top:14px;
+
+    .statRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
     }
-    .chip{
+
+    .stat{
+      padding:9px 12px;
       border:1px solid var(--line);
-      background:rgba(18,24,38,.03);
-      padding:8px 10px;
       border-radius:999px;
-      font-weight:900;
+      background:rgba(23,32,51,.03);
       color:var(--muted);
+      font-weight:900;
       font-size:13px;
     }
 
-    /* Cards / Sections */
+    /* PROFILE CARD */
+    .profileCard{
+      background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(248,251,255,.95));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow-md);
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+    }
+
+    .profileTop{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+    }
+
+    .avatarWrap{
+      width:176px;
+      height:176px;
+      border-radius:50%;
+      padding:7px;
+      background:
+        linear-gradient(135deg, rgba(32,78,207,.14), rgba(19,138,99,.12));
+      box-shadow:
+        0 16px 34px rgba(23,32,51,.12),
+        inset 0 0 0 1px rgba(255,255,255,.7);
+      margin-bottom:14px;
+    }
+
+    .avatar{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      border-radius:50%;
+      border:4px solid #fff;
+      background:#eef2fa;
+    }
+
+    .profileName{
+      margin:0;
+      font-size:24px;
+      line-height:1.15;
+      font-weight:900;
+      letter-spacing:-.3px;
+    }
+
+    .profileRole{
+      margin:6px 0 0 0;
+      color:var(--muted);
+      font-weight:800;
+      font-size:14px;
+    }
+
+    .availability{
+      margin-top:12px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--green-soft);
+      color:var(--green);
+      font-size:13px;
+      font-weight:900;
+      border:1px solid rgba(19,138,99,.14);
+    }
+
+    .availability::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--green);
+      box-shadow:0 0 0 5px rgba(19,138,99,.10);
+    }
+
+    .contactMini{
+      margin-top:18px;
+      display:grid;
+      gap:10px;
+    }
+
+    .miniItem{
+      border:1px solid var(--line);
+      background:var(--paper);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+
+    .miniLabel{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.4px;
+      margin-bottom:4px;
+    }
+
+    .miniValue{
+      font-size:15px;
+      font-weight:900;
+      word-break:break-word;
+    }
+
+    .miniValue a{color:inherit}
+
+    .profileBtns{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+      justify-content:center;
+    }
+
+    /* SECTION */
     section{scroll-margin-top:90px}
+
     .section{
       margin-top:16px;
-      background:rgba(255,255,255,.85);
+      padding:22px;
       border:1px solid var(--line);
-      border-radius: var(--radius2);
-      padding:18px;
-      box-shadow: var(--shadow2);
+      border-radius:var(--radius-lg);
+      background:rgba(255,255,255,.88);
+      box-shadow:var(--shadow-sm);
     }
+
     .sectionHead{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:14px; flex-wrap:wrap;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+
+    .eyebrow{
+      margin:0 0 6px 0;
+      font-size:12px;
+      font-weight:900;
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
+
+    .section h2{
+      margin:0;
+      font-size:24px;
+      line-height:1.15;
+      letter-spacing:-.4px;
+    }
+
+    .sectionSub{
+      margin:6px 0 0 0;
+      color:var(--muted);
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    @media (max-width:900px){
+      .grid2,.grid3{grid-template-columns:1fr}
+    }
+
+    .card{
+      background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      height:100%;
+    }
+
+    .cardTitle{
+      display:flex;
+      align-items:center;
+      gap:10px;
       margin-bottom:10px;
     }
-    .sectionHead h2{
-      margin:0;
+
+    .icon{
+      width:38px;
+      height:38px;
+      flex:0 0 38px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      border:1px solid rgba(32,78,207,.10);
       font-size:18px;
-      letter-spacing:.2px;
     }
-    .sectionHead p{
-      margin:0;
+
+    .cardTitle strong{
+      font-size:16px;
+      line-height:1.2;
+    }
+
+    .muted{
       color:var(--muted);
       font-weight:700;
     }
-    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
-    .grid2{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
-    @media (max-width:900px){
-      .grid3{grid-template-columns:1fr}
-      .grid2{grid-template-columns:1fr}
-    }
-    .card{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:14px;
-    }
-    .cardTitle{
-      display:flex; gap:10px; align-items:center;
-      font-weight:900; margin:0 0 6px 0;
-    }
-    .cardTitle .ic{
-      width:34px; height:34px; border-radius:12px;
-      display:grid; place-items:center;
-      background:rgba(42,96,255,.10);
-      border:1px solid rgba(42,96,255,.18);
-    }
-    .muted{color:var(--muted); font-weight:700}
-    .big{
-      font-size:16px;
-      font-weight:800;
-    }
-    .list{margin:10px 0 0 18px; color:var(--muted); font-weight:700}
-    .list li{margin:6px 0}
 
-    /* Timeline */
-    .timeline{display:grid; gap:12px}
-    .job{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:14px;
+    .list{
+      margin:10px 0 0 18px;
+      padding:0;
+      color:var(--muted);
+      font-weight:700;
     }
-    .jobTop{
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
-      align-items:baseline;
+
+    .list li{margin:7px 0}
+
+    .badgeRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:8px;
     }
-    .jobTitle{font-weight:1000}
-    .jobMeta{color:var(--muted); font-weight:900}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      border:1px solid var(--line);
-      background:rgba(27,191,138,.10);
-      color:rgba(14,94,68,.95);
-      padding:6px 10px;
+
+    .badge{
+      padding:8px 10px;
       border-radius:999px;
-      font-weight:900;
+      border:1px solid var(--line);
+      background:rgba(23,32,51,.03);
+      color:var(--muted);
       font-size:13px;
+      font-weight:900;
     }
 
-    /* Footer */
+    /* TIMELINE */
+    .timeline{
+      display:grid;
+      gap:14px;
+    }
+
+    .job{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .job::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:4px;
+      background:linear-gradient(180deg, var(--accent), var(--green));
+    }
+
+    .jobTop{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      padding-left:8px;
+    }
+
+    .jobTitle{
+      font-size:17px;
+      font-weight:900;
+      line-height:1.3;
+    }
+
+    .jobMeta{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:900;
+      background:rgba(23,32,51,.04);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:7px 10px;
+      white-space:nowrap;
+    }
+
+    .sectionTag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(19,138,99,.14);
+      background:var(--green-soft);
+      color:var(--green);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:900;
+    }
+
+    /* CONTACT */
+    .contactActions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:6px;
+    }
+
     footer{
-      margin-top:16px;
+      margin-top:18px;
+      padding:20px 8px 8px;
       text-align:center;
       color:var(--muted);
+      font-size:14px;
       font-weight:800;
-      padding:16px 8px;
     }
 
-    /* Print (optional) */
     @media print{
-      .nav,.mobilePanel,.heroActions{display:none !important}
+      .nav,.mobilePanel,.heroActions,.profileBtns,.contactActions{display:none !important}
       body{background:#fff}
-      .hero,.section{box-shadow:none}
       .wrap{padding:0}
+      .hero,.section,.card,.job,.profileCard{box-shadow:none}
     }
   </style>
 </head>
-
 <body>
   <div class="wrap">
 
-    <nav class="nav" aria-label="Primary">
+    <!-- NAV -->
+    <nav class="nav" aria-label="Primary Navigation">
       <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
+        <span class="brandMark" aria-hidden="true"></span>
         <span>Rama Ram</span>
       </div>
 
       <div class="navlinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#services">What I Do</a>
+        <a href="#services">Services</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#licence">Licence</a>
         <a href="#contact">Contact</a>
       </div>
 
-      <div class="cta">
-        <a class="btn btnPrimary" href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">
-          Download CV
-        </a>
+      <div class="navActions">
+        <a class="btn btnPrimary" href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">Open CV</a>
         <a class="btn btnGreen" href="#contact">Hire / Contact</a>
-        <button class="hamb" id="hamb" aria-expanded="false" aria-controls="mobilePanel">Menu</button>
+        <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="mobilePanel">Menu</button>
       </div>
     </nav>
 
-    <div class="mobilePanel" id="mobilePanel" role="menu" aria-label="Mobile navigation">
-      <a href="#home" role="menuitem">Home</a>
-      <a href="#about" role="menuitem">About</a>
-      <a href="#services" role="menuitem">What I Do</a>
-      <a href="#experience" role="menuitem">Experience</a>
-      <a href="#skills" role="menuitem">Skills</a>
-      <a href="#licence" role="menuitem">Licence</a>
-      <a href="#contact" role="menuitem">Contact</a>
-      <a href="assets/rama-cv.pdf" target="_blank" rel="noreferrer" role="menuitem">Download CV</a>
+    <div class="mobilePanel" id="mobilePanel">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#licence">Licence</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">Open CV</a>
     </div>
 
     <!-- HERO -->
@@ -335,49 +671,61 @@
       <div class="heroGrid">
         <div>
           <div class="kicker">Professional Driver • Safety First</div>
-          <h1>HGV / Heavy Goods Vehicle Driver</h1>
-          <p class="sub">
-            Dedicated, safety-conscious driver with 9+ years of experience in transport & logistics — focused on clean driving,
-            on-time delivery, and responsible handling of loads.
+          <h1>Reliable HGV / Heavy Goods Vehicle Driver</h1>
+
+          <p class="heroLead">
+            Dedicated and safety-conscious professional driver with 9+ years of experience in transport and logistics.
+            Focused on clean driving, responsible load handling, punctual delivery and dependable long-route operations.
           </p>
 
           <div class="heroActions">
-            <a class="btn btnPrimary" href="#experience">View Experience</a>
+            <a class="btn btnPrimary" href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">View CV</a>
+            <a class="btn btnSoft" href="#experience">View Experience</a>
             <a class="btn btnGreen" href="#contact">Contact Now</a>
             <button class="btn" onclick="window.print()">Print</button>
           </div>
 
-          <div class="chips" aria-label="Highlights">
-            <span class="chip">Licence: CE</span>
-            <span class="chip">Language: Hindi (Native)</span>
-            <span class="chip">English: B2</span>
-            <span class="chip">Based in India</span>
+          <div class="statRow" aria-label="Quick Highlights">
+            <span class="stat">9+ Years Experience</span>
+            <span class="stat">CE Category</span>
+            <span class="stat">Hazardous Material Experience</span>
+            <span class="stat">Based in India</span>
           </div>
         </div>
 
-        <div class="card" style="position:relative;">
-          <div class="cardTitle">
-            <span class="ic" aria-hidden="true">☎</span>
-            <span>Quick Contact</span>
+        <aside class="profileCard">
+          <div class="profileTop">
+            <div class="avatarWrap">
+              <img src="assets/rama-photo.png" alt="Rama Ram Photo" class="avatar" />
+            </div>
+
+            <h2 class="profileName">Rama Ram</h2>
+            <p class="profileRole">Professional Driver • Transport & Logistics</p>
+            <div class="availability">Available for driving roles</div>
           </div>
-          <div class="muted">Phone</div>
-          <div class="big"><a href="tel:+919571160487">(+91) 9571160487</a></div>
 
-          <div style="height:10px"></div>
-          <div class="muted">Email</div>
-          <div class="big"><a href="mailto:ramaramdhakakosariya@gmail.com">ramaramdhakakosariya@gmail.com</a></div>
+          <div class="contactMini">
+            <div class="miniItem">
+              <div class="miniLabel">Phone</div>
+              <div class="miniValue"><a href="tel:+919571160487">(+91) 9571160487</a></div>
+            </div>
 
-          <div style="height:10px"></div>
-          <div class="muted">Website</div>
-          <div class="big"><a href="https://www.apanarr.weebly.com" target="_blank" rel="noreferrer">www.apanarr.weebly.com</a></div>
+            <div class="miniItem">
+              <div class="miniLabel">Email</div>
+              <div class="miniValue"><a href="mailto:ramaramdhakakosariya@gmail.com">ramaramdhakakosariya@gmail.com</a></div>
+            </div>
 
-          <div style="height:12px"></div>
-          <div class="chips">
-            <a class="chip" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a class="chip" href="https://www.instagram.com/rama_ram_dhaka_kosariya?igsh=ZmUzb2U3bDRmMjZv" target="_blank" rel="noreferrer">Instagram</a>
-            <a class="chip" href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">CV PDF</a>
+            <div class="miniItem">
+              <div class="miniLabel">Website</div>
+              <div class="miniValue"><a href="https://www.apanarr.weebly.com" target="_blank" rel="noreferrer">www.apanarr.weebly.com</a></div>
+            </div>
           </div>
-        </div>
+
+          <div class="profileBtns">
+            <a class="btn btnPrimary" href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">Open CV</a>
+            <a class="btn btnGreen" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </aside>
       </div>
     </header>
 
@@ -385,32 +733,36 @@
     <section class="section" id="about">
       <div class="sectionHead">
         <div>
-          <h2>About</h2>
-          <p>A clean overview — not a CV layout.</p>
+          <p class="eyebrow">Profile</p>
+          <h2>About Me</h2>
+          <p class="sectionSub">A clean, modern presentation with a professional European-style layout.</p>
         </div>
       </div>
 
       <div class="grid2">
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">👤</span>
-            <span>Profile</span>
+            <span class="icon" aria-hidden="true">👤</span>
+            <strong>Professional Summary</strong>
           </div>
           <p class="muted" style="margin:0;">
-            I focus on safe, timely transportation with strong traffic-rule knowledge and customer-service mindset.
-            I keep the vehicle clean, well-maintained, and delivery-oriented.
+            I focus on safe, timely and responsible transportation with strong traffic-rule knowledge,
+            disciplined driving habits and a practical customer-service mindset. I maintain cleanliness,
+            respect schedules and handle long-distance routes with reliability.
           </p>
         </div>
 
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">📍</span>
-            <span>Base & Basics</span>
+            <span class="icon" aria-hidden="true">📍</span>
+            <strong>Personal Information</strong>
           </div>
           <ul class="list">
             <li><b>Nationality:</b> Indian</li>
-            <li><b>Birth:</b> 07/07/1994 • Barmer, Rajasthan</li>
-            <li><b>Address:</b> Dhako ki dhani, Kosariya, Baytu, Balotra, 344035, Barmer</li>
+            <li><b>Date of Birth:</b> 07/07/1994</li>
+            <li><b>Birth Place:</b> Barmer, Rajasthan</li>
+            <li><b>Address:</b> Dhako ki Dhani, Kosariya, Baytu, Balotra, 344035, Barmer</li>
+            <li><b>Language:</b> Hindi (Native), English (B2)</li>
           </ul>
         </div>
       </div>
@@ -420,39 +772,40 @@
     <section class="section" id="services">
       <div class="sectionHead">
         <div>
+          <p class="eyebrow">Services</p>
           <h2>What I Do</h2>
-          <p>Clear, European-style service blocks.</p>
+          <p class="sectionSub">Focused transport services with clarity, discipline and safe execution.</p>
         </div>
       </div>
 
       <div class="grid3">
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">🚛</span>
-            <span>Heavy Transport</span>
+            <span class="icon" aria-hidden="true">🚛</span>
+            <strong>Heavy Transport</strong>
           </div>
           <p class="muted" style="margin:0;">
-            Responsible heavy-goods delivery with on-time focus, route planning, and safe load handling.
+            Reliable heavy-goods transportation with on-time delivery, proper route handling and careful driving discipline.
           </p>
         </div>
 
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">🧪</span>
-            <span>Hazardous Materials</span>
+            <span class="icon" aria-hidden="true">🧪</span>
+            <strong>Hazardous Materials</strong>
           </div>
           <p class="muted" style="margin:0;">
-            Experience with chemical/hazardous transportation and safety-first discipline.
+            Experienced in chemical and hazardous load movement with safety-first procedures and responsible handling.
           </p>
         </div>
 
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">🗺️</span>
-            <span>Navigation & Tracking</span>
+            <span class="icon" aria-hidden="true">🗺️</span>
+            <strong>Navigation & Routing</strong>
           </div>
           <p class="muted" style="margin:0;">
-            Confident with GPS, Google Maps, tracking tools, and efficient long-route planning.
+            Confident with GPS, Google Maps, route planning and long-distance navigation across multiple states.
           </p>
         </div>
       </div>
@@ -462,10 +815,11 @@
     <section class="section" id="experience">
       <div class="sectionHead">
         <div>
-          <h2>Experience</h2>
-          <p>Simple timeline cards (professional & modern).</p>
+          <p class="eyebrow">Career</p>
+          <h2>Work Experience</h2>
+          <p class="sectionSub">A straightforward timeline that keeps the page professional and easy to scan.</p>
         </div>
-        <span class="pill">9+ Years</span>
+        <span class="sectionTag">9+ Years of Driving Experience</span>
       </div>
 
       <div class="timeline">
@@ -474,9 +828,9 @@
             <div class="jobTitle">Hazardous Materials Driver — Shree Ravray Logistics</div>
             <div class="jobMeta">01/08/2015 – 30/12/2019</div>
           </div>
-          <ul class="list">
-            <li>Loaded chemicals from Kandla / Mundra Port and transported across India.</li>
-            <li>Maintained safety procedures and time discipline during trips.</li>
+          <ul class="list" style="margin-top:10px;">
+            <li>Loaded chemicals from Kandla / Mundra Port and transported them to multiple locations across India.</li>
+            <li>Maintained safety procedures, route discipline and timely delivery standards during every trip.</li>
           </ul>
         </div>
 
@@ -485,9 +839,9 @@
             <div class="jobTitle">Heavy Goods Vehicle Driver — UEM India Pvt. Limited</div>
             <div class="jobMeta">15/02/2020 – Current</div>
           </div>
-          <ul class="list">
-            <li>Container delivery: Gujarat port → HPCL Pachpadra, Rajasthan supply.</li>
-            <li>Transported cement, wood, iron pipes, rods and other loads across India.</li>
+          <ul class="list" style="margin-top:10px;">
+            <li>Container delivery from Gujarat ports to HPCL Pachpadra and Rajasthan-side supply locations.</li>
+            <li>Transported cement, wood, iron pipes, rods and other materials across long-distance national routes.</li>
           </ul>
         </div>
       </div>
@@ -497,188 +851,187 @@
     <section class="section" id="skills">
       <div class="sectionHead">
         <div>
-          <h2>Skills</h2>
-          <p>Short & clean, easy to scan.</p>
+          <p class="eyebrow">Strengths</p>
+          <h2>Skills & Qualifications</h2>
+          <p class="sectionSub">Short, readable and premium-looking skill presentation.</p>
         </div>
       </div>
 
       <div class="grid2">
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">✅</span>
-            <span>Core</span>
+            <span class="icon" aria-hidden="true">✅</span>
+            <strong>Core Skills</strong>
           </div>
-          <div class="chips">
-            <span class="chip">Safety & Compliance</span>
-            <span class="chip">Traffic Rule Knowledge</span>
-            <span class="chip">Punctual & Reliable</span>
-            <span class="chip">Vehicle Cleanliness</span>
-            <span class="chip">Customer Service</span>
+          <div class="badgeRow">
+            <span class="badge">Safety & Compliance</span>
+            <span class="badge">Traffic Rule Knowledge</span>
+            <span class="badge">Punctual & Reliable</span>
+            <span class="badge">Vehicle Cleanliness</span>
+            <span class="badge">Customer Service</span>
+            <span class="badge">Long Route Discipline</span>
           </div>
         </div>
 
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">🧰</span>
-            <span>Tools</span>
+            <span class="icon" aria-hidden="true">🧰</span>
+            <strong>Tools & Practical Ability</strong>
           </div>
-          <div class="chips">
-            <span class="chip">Google Maps</span>
-            <span class="chip">GPS Tracking</span>
-            <span class="chip">Navigation</span>
-            <span class="chip">Mobile/Tablet</span>
-            <span class="chip">Computer & Internet</span>
+          <div class="badgeRow">
+            <span class="badge">Google Maps</span>
+            <span class="badge">GPS Tracking</span>
+            <span class="badge">Navigation</span>
+            <span class="badge">Mobile / Tablet</span>
+            <span class="badge">Computer & Internet</span>
           </div>
         </div>
       </div>
 
-      <div class="grid2" style="margin-top:12px;">
+      <div class="grid2" style="margin-top:14px;">
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">🪪</span>
-            <span>Driving Licence</span>
+            <span class="icon" aria-hidden="true">🪪</span>
+            <strong>Driving Qualification</strong>
           </div>
           <ul class="list">
-            <li><b>Category:</b> CE</li>
+            <li><b>Licence Category:</b> CE</li>
             <li><b>Valid:</b> 21/02/2015 – 15/02/2031</li>
+            <li><b>Transport Badge:</b> 15/OFS</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">🎓</span>
-            <span>Education</span>
+            <span class="icon" aria-hidden="true">🎓</span>
+            <strong>Education</strong>
           </div>
           <ul class="list">
             <li><b>12th (Arts)</b> — Board of Secondary Education Rajasthan</li>
-            <li><b>Year:</b> 24/05/2012 • Ajmer, India</li>
+            <li><b>Year:</b> 24/05/2012</li>
+            <li><b>Location:</b> Ajmer, India</li>
             <li><a href="https://rajeduboard.rajasthan.gov.in" target="_blank" rel="noreferrer">rajeduboard.rajasthan.gov.in</a></li>
-        
           </ul>
         </div>
       </div>
     </section>
 
     <!-- LICENCE -->
-  <section class="section" id="licence">
-   <div class="sectionHead">
-      <div>
-        <h2>Driving Licence</h2>
-        <p>Verified licence summary (quick view).</p>
-      </div>
-      <a class="btn btnPrimary" href="assets/licence.pdf" target="_blank" rel="noreferrer">Open Licence PDF</a>
-    </div>
-
-    <div class="grid2">
-      <div class="card">
-        <div class="cardTitle">
-         <span class="ic" aria-hidden="true">🪪</span>
-          <span>Licence Details</span>
-       </div>
-
-        <ul class="list">
-          <li><b>DL No:</b> RJ04 20130111517</li>
-          <li><b>Issued By:</b> Government of Rajasthan (RJ04)</li>
-          <li><b>Issue Date:</b> 25-11-2013</li>
-          <li><b>Validity (NT):</b> 24-11-2033</li>
-          <li><b>Validity (TR):</b> 15-02-2031</li>
-          <li><b>Hazardous Validity:</b> 15-02-2026</li>
-          <li><b>Licensing Authority:</b> District Transport Office, Barmer</li>
-        </ul>
+    <section class="section" id="licence">
+      <div class="sectionHead">
+        <div>
+          <p class="eyebrow">Verification</p>
+          <h2>Driving Licence</h2>
+          <p class="sectionSub">A neat summary with quick access to the licence PDF.</p>
+        </div>
+        <a class="btn btnPrimary" href="assets/licence.pdf" target="_blank" rel="noreferrer">Open Licence PDF</a>
       </div>
 
-      <div class="card">
-        <div class="cardTitle">
-          <span class="ic" aria-hidden="true">🚚</span>
-          <span>Vehicle Classes</span>
+      <div class="grid2">
+        <div class="card">
+          <div class="cardTitle">
+            <span class="icon" aria-hidden="true">🪪</span>
+            <strong>Licence Details</strong>
+          </div>
+          <ul class="list">
+            <li><b>DL No:</b> RJ04 20130111517</li>
+            <li><b>Issued By:</b> Government of Rajasthan (RJ04)</li>
+            <li><b>Issue Date:</b> 25-11-2013</li>
+            <li><b>Validity (NT):</b> 24-11-2033</li>
+            <li><b>Validity (TR):</b> 15-02-2031</li>
+            <li><b>Hazardous Validity:</b> 15-02-2026</li>
+            <li><b>Authority:</b> District Transport Office, Barmer</li>
+          </ul>
         </div>
 
-        <div class="chips" style="margin-top:6px;">
-          <span class="chip">MCWG (NT)</span>
-          <span class="chip">LMV (NT)</span>
-          <span class="chip">TRANS (TR)</span>
+        <div class="card">
+          <div class="cardTitle">
+            <span class="icon" aria-hidden="true">🚚</span>
+            <strong>Vehicle Classes</strong>
+          </div>
+
+          <div class="badgeRow">
+            <span class="badge">MCWG (NT)</span>
+            <span class="badge">LMV (NT)</span>
+            <span class="badge">TRANS (TR)</span>
+          </div>
+
+          <ul class="list" style="margin-top:12px;">
+            <li><b>Badge:</b> 15/OFS</li>
+            <li><b>Badge Issue Date:</b> 21-02-2015</li>
+            <li><b>Suitable For:</b> Heavy transport and commercial driving roles</li>
+          </ul>
         </div>
-
-        <div style="height:10px;"></div>
-        <p class="muted" style="margin:0;">
-          Badge (Transport): <b>15/OFS</b> • Issued: <b>21-02-2015</b>
-        </p>
-
-        <div style="height:12px;"></div>
-        <div class="muted" style="font-weight:900;">Optional (Public-safe)</div>
-        <p class="muted" style="margin:6px 0 0 0;">
-          If you want, I can show only “Licence category + validity” and hide DL number for privacy.
-        </p>
       </div>
-    </div>
-  </section>
-    
+    </section>
+
     <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="sectionHead">
         <div>
-          <h2>Contact</h2>
-          <p>One-click contact actions.</p>
+          <p class="eyebrow">Contact</p>
+          <h2>Get In Touch</h2>
+          <p class="sectionSub">Quick action buttons so employers can contact you easily.</p>
         </div>
       </div>
 
       <div class="grid2">
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">📞</span>
-            <span>Call / Email</span>
+            <span class="icon" aria-hidden="true">📞</span>
+            <strong>Direct Contact</strong>
           </div>
-          <p class="muted" style="margin:0 0 10px 0;">
-            Fast response — use any option below:
+
+          <p class="muted" style="margin:0 0 12px 0;">
+            For job opportunities, transport work or driver hiring, use any option below.
           </p>
-          <div class="heroActions">
-            <a class="btn btnPrimary" href="tel:+919571160487">Call</a>
-            <a class="btn btnGreen" href="mailto:ramaramdhakakosariya@gmail.com">Email</a>
-            <a class="btn" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
+
+          <div class="contactActions">
+            <a class="btn btnPrimary" href="tel:+919571160487">Call Now</a>
+            <a class="btn btnGreen" href="mailto:ramaramdhakakosariya@gmail.com">Send Email</a>
+            <a class="btn btnSoft" href="https://t.ly/7WGbS" target="_blank" rel="noreferrer">WhatsApp</a>
           </div>
         </div>
 
         <div class="card">
           <div class="cardTitle">
-            <span class="ic" aria-hidden="true">🔗</span>
-            <span>Links</span>
+            <span class="icon" aria-hidden="true">🔗</span>
+            <strong>Online Links</strong>
           </div>
+
           <ul class="list">
             <li><b>Website:</b> <a href="https://www.apanarr.weebly.com" target="_blank" rel="noreferrer">apanarr.weebly.com</a></li>
             <li><b>Instagram:</b> <a href="https://www.instagram.com/rama_ram_dhaka_kosariya?igsh=ZmUzb2U3bDRmMjZv" target="_blank" rel="noreferrer">rama_ram_dhaka_kosariya</a></li>
-            <li><b>CV PDF:</b> <a href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">Open / Download</a></li>
+            <li><b>CV:</b> <a href="assets/rama-cv.pdf" target="_blank" rel="noreferrer">Open / View PDF</a></li>
           </ul>
         </div>
       </div>
     </section>
 
     <footer>
-      © <span id="year"></span> Rama Ram • Built for a clean, modern professional presence
+      © <span id="year"></span> Rama Ram • Clean professional web presence
     </footer>
-
   </div>
 
   <script>
-    // Mobile menu
-    const hamb = document.getElementById("hamb");
-    const panel = document.getElementById("mobilePanel");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobilePanel = document.getElementById("mobilePanel");
 
-    function closePanel(){
-      panel.style.display = "none";
-      hamb.setAttribute("aria-expanded","false");
+    function closeMenu(){
+      mobilePanel.style.display = "none";
+      menuBtn.setAttribute("aria-expanded", "false");
     }
 
-    hamb?.addEventListener("click", () => {
-      const open = hamb.getAttribute("aria-expanded") === "true";
-      hamb.setAttribute("aria-expanded", String(!open));
-      panel.style.display = open ? "none" : "block";
+    menuBtn?.addEventListener("click", () => {
+      const open = menuBtn.getAttribute("aria-expanded") === "true";
+      menuBtn.setAttribute("aria-expanded", String(!open));
+      mobilePanel.style.display = open ? "none" : "block";
     });
 
-    panel?.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => closePanel());
+    mobilePanel?.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
     });
 
-    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
