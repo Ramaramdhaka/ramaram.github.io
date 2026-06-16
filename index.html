@@ -523,7 +523,7 @@
 
           <div class="heroActions" style="margin-top:0;">
             <a class="btn btnPrimary" href="tel:+919571160487">Call Now</a>
-            <a class="btn btnGreen" href="mailto:ramaramdhakakosariya@gmail.com?subject=Job%20Inquiry%20for%20Rama%20Ram&body=Hello%20Rama%20Ram%2C%0A%0AI%20would%20like%20to%20discuss%20a%20driving%20opportunity%20with%20you.%0A%0ARegards%2C">Email</a>
+            <a class="btn btnGreen" href="https://mail.google.com/mail/?view=cm&to=ramaramdhakakosariya%40gmail.com&subject=Job%20Inquiry%20for%20Rama%20Ram&body=Hello%20Rama%20Ram%2C%0A%0AI%20would%20like%20to%20discuss%20a%20driving%20opportunity%20with%20you.%0A%0ARegards%2C" target="_blank" rel="noreferrer">Email</a>
             <a class="btn btnSoft" href="https://wa.me/919571160487?text=Hello%20Rama%20Ram%2C%20I%20visited%20your%20profile%20and%20I%20am%20interested%20in%20discussing%20a%20driving%20opportunity%20with%20you.%20Please%20let%20me%20know%20your%20availability." target="_blank" rel="noreferrer">💬 WhatsApp Direct</a>
           </div>
         </div>
@@ -551,7 +551,7 @@
             Fill the form below — your message will arrive directly in my inbox. I will reply as soon as possible.
           </p>
 
-          <form id="contactForm" action="https://formspree.io/f/APNI_FORM_ID_YAHAN" method="POST" style="display:grid;gap:12px;">
+          <form id="contactForm" action="https://formsubmit.co/ajax/ramaramdhakakosariya@gmail.com" method="POST" style="display:grid;gap:12px;">
             <div class="formGrid">
               <div>
                 <label class="formLabel">Your Name</label>
@@ -598,10 +598,14 @@
         ok.style.display = 'none';
         err.style.display = 'none';
         try {
-          const res = await fetch(contactForm.action, {
+          const res = await fetch('https://formsubmit.co/ajax/ramaramdhakakosariya@gmail.com', {
             method: 'POST',
-            body: new FormData(contactForm),
-            headers: { 'Accept': 'application/json' }
+            body: JSON.stringify({
+              name: contactForm.querySelector('[name="name"]').value,
+              email: contactForm.querySelector('[name="email"]').value,
+              message: contactForm.querySelector('[name="message"]').value,
+            }),
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
           });
           if (res.ok) {
             ok.style.display = 'block';
@@ -642,4 +646,6 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
+</html>
+
 </html>
