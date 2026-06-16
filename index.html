@@ -540,7 +540,7 @@
         </div>
       </div>
 
-      <!-- Message Form -->
+     <!-- Message Form -->
       <div style="margin-top:14px;">
         <div class="card" style="height:auto;">
           <div class="cardTitle">
@@ -598,18 +598,29 @@
         ok.style.display = 'none';
         err.style.display = 'none';
         try {
+          var sName  = contactForm.querySelector('[name="name"]').value;
+          var sEmail = contactForm.querySelector('[name="email"]').value;
+          var sMsg   = contactForm.querySelector('[name="message"]').value;
           const res = await fetch('https://formsubmit.co/ajax/ramaramdhakakosariya@gmail.com', {
             method: 'POST',
             body: JSON.stringify({
-              name: contactForm.querySelector('[name="name"]').value,
-              email: contactForm.querySelector('[name="email"]').value,
-              message: contactForm.querySelector('[name="message"]').value,
+              name: sName,
+              email: sEmail,
+              message: sMsg,
+              _subject: 'New Message from ' + sName + ' — Rama Ram Website',
+              _replyto: sEmail,
+              _template: 'table'
             }),
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
           });
           if (res.ok) {
             ok.style.display = 'block';
             contactForm.reset();
+            var waTxt = 'New%20Message%20-%20Rama%20Ram%20Website%0A%0AName%3A%20' +
+              encodeURIComponent(sName) +
+              '%0AEmail%3A%20' + encodeURIComponent(sEmail) +
+              '%0AMessage%3A%20' + encodeURIComponent(sMsg);
+            window.open('https://wa.me/919571160487?text=' + waTxt, '_blank');
           } else {
             err.style.display = 'block';
           }
@@ -646,6 +657,4 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
-</html>
-
 </html>
