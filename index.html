@@ -224,7 +224,17 @@
   color:#1f57d8;
   transform:translateY(-2px);
 }
+/* Mobile Dropdown Fix */
 
+@media (max-width:768px){
+
+  .dropdown.active .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+
+}
 /* Dropdown Box */
 
 .dropdown-menu{
@@ -844,6 +854,42 @@
     }
 
     document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+ // Premium Navbar Mobile + PC Fix
+
+document.querySelectorAll('.dropdown-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+
+    // Mobile par dropdown close
+    document.querySelectorAll('.dropdown').forEach(drop => {
+      drop.classList.remove('active');
+    });
+
+  });
+});
+
+// Mobile click open/close
+if (window.innerWidth <= 768) {
+
+  document.querySelectorAll('.dropdown > a').forEach(item => {
+
+    item.addEventListener('click', function(e) {
+
+      const parent = this.parentElement;
+
+      if (!parent.classList.contains('active')) {
+        e.preventDefault();
+
+        document.querySelectorAll('.dropdown').forEach(d => {
+          d.classList.remove('active');
+        });
+
+        parent.classList.add('active');
+      }
+
+    });
+
+  });
+
+} </script>
 </body>
 </html>
