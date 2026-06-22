@@ -269,10 +269,17 @@
 
 /* Slide Down Animation */
 
-.dropdown:hover .dropdown-menu{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
+/* PC Hover Only */
+
+@media (min-width:769px){
+
+  .dropdown:hover .dropdown-menu,
+  .dropdown.active .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+
 }
 
 /* Dropdown Items */
@@ -874,17 +881,23 @@ if (window.innerWidth <= 768) {
 
     item.addEventListener('click', function(e) {
 
-      const parent = this.parentElement;
+     const parent = this.parentElement;
 
-      if (!parent.classList.contains('active')) {
-        e.preventDefault();
+e.preventDefault();
 
-        document.querySelectorAll('.dropdown').forEach(d => {
-          d.classList.remove('active');
-        });
+if(parent.classList.contains('active')){
 
-        parent.classList.add('active');
-      }
+  parent.classList.remove('active');
+
+}else{
+
+  document.querySelectorAll('.dropdown').forEach(d => {
+    d.classList.remove('active');
+  });
+
+  parent.classList.add('active');
+
+}
 
     });
 
