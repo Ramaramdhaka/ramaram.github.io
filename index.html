@@ -233,7 +233,13 @@
     visibility:visible;
     transform:translateY(0);
   }
-
+ 
+.disable-hover .dropdown-menu{
+  opacity:0 !important;
+  visibility:hidden !important;
+  transform:translateY(12px) !important;
+}
+ 
 }
 /* Dropdown Box */
 
@@ -918,6 +924,22 @@ if(window.innerWidth <= 768){
   });
 
 }
+
+   document.querySelectorAll('.dropdown-menu a').forEach(link => {
+
+  link.addEventListener('click', function(){
+
+    const drop = this.closest('.dropdown');
+
+    drop.classList.add('disable-hover');
+
+    setTimeout(() => {
+      drop.classList.remove('disable-hover');
+    }, 1000);
+
+  });
+
+});
 
 } </script>
 </body>
