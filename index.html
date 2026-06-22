@@ -924,8 +924,7 @@ if(window.innerWidth <= 768){
   });
 
 }
-
-   document.querySelectorAll('.dropdown-menu a').forEach(link => {
+document.querySelectorAll('.dropdown-menu a').forEach(link => {
 
   link.addEventListener('click', function(){
 
@@ -933,14 +932,19 @@ if(window.innerWidth <= 768){
 
     drop.classList.add('disable-hover');
 
-    setTimeout(() => {
-      drop.classList.remove('disable-hover');
-    }, 1000);
-
   });
 
 });
 
+document.querySelectorAll('.dropdown').forEach(drop => {
+
+  drop.addEventListener('mouseleave', function(){
+
+    this.classList.remove('disable-hover');
+
+  });
+
+});
 </script>
 </body>
 </html>
