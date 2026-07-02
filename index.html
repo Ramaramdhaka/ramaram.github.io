@@ -344,7 +344,29 @@
   transform:translateY(-3px);
   box-shadow:
   0 20px 40px rgba(31,87,216,.30);
-} </style>
+/* ===== MOBILE 3-DOT MENU ===== */
+.menuToggle{
+  display:none;
+  background:var(--blue-soft);
+  color:var(--blue);
+  border:1px solid rgba(31,87,216,.15);
+  border-radius:12px;
+  font-size:24px;
+  font-weight:900;
+  padding:4px 14px;
+  line-height:1.2;
+  cursor:pointer;
+}
+
+@media (max-width:768px){
+  .menuToggle{display:inline-flex;align-items:center;justify-content:center;}
+  .navLinks{display:none;width:100%;flex-direction:column;align-items:stretch;gap:4px;}
+  .navLinks.open{display:flex;}
+  .navLinks > a,
+  .dropdown > a{text-align:left;}
+  .dropdown{width:100%;}
+  .dropdown-menu{position:static;min-width:100%;box-shadow:none;}
+}}</style>
 </head>
 <body>
   <div class="wrap">
@@ -353,6 +375,8 @@
         <span class="brandMark"></span>
         <span>Rama Ram</span>
       </div>
+
+     <button class="menuToggle" id="menuToggle" aria-label="Menu">⋮</button>
      
 <div class="navLinks">
 
@@ -937,6 +961,36 @@ document.querySelectorAll('.dropdown').forEach(drop => {
   });
 
 });
+// ===== 3-DOT MENU TOGGLE =====
+const menuToggle = document.getElementById('menuToggle');
+const navLinksBox = document.querySelector('.navLinks');
+
+if(menuToggle && navLinksBox){
+
+  // 3-dot par click = menu open/close
+  menuToggle.addEventListener('click', function(){
+    navLinksBox.classList.toggle('open');
+  });
+
+  // Kisi bhi link par click = pura menu automatic hide
+  navLinksBox.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(){
+
+      // Dropdown parent (About ▼ etc.) ke pehle click par
+      // sirf submenu khulega, menu band nahi hoga
+      if(
+        window.innerWidth <= 768 &&
+        this.parentElement.classList.contains('dropdown') &&
+        !this.parentElement.classList.contains('active')
+      ){
+        return;
+      }
+
+      // Baaki sab clicks par menu auto-hide
+      navLinksBox.classList.remove('open');
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+    });
+  });
 </script>
 </body>
 </html>
