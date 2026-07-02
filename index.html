@@ -366,7 +366,38 @@
   .dropdown > a{text-align:left;}
   .dropdown{width:100%;}
   .dropdown-menu{position:static;min-width:100%;box-shadow:none;}
-}}</style>
+}}/* ===== HERO BALANCE FIX ===== */
+.hero{
+  padding:40px 28px;
+}
+
+.heroGrid{
+  align-items:center;
+  gap:32px;
+}
+
+.heroGrid h1{
+  margin-top:10px;
+}
+
+.heroLead{
+  margin:18px 0 0;
+  font-size:17px;
+  line-height:1.7;
+}
+
+.heroActions{
+  margin-top:28px;
+}
+
+@media (max-width:1020px){
+  .hero{padding:28px 22px;}
+  .heroGrid{gap:24px;}
+}
+
+@media (max-width:560px){
+  .hero{padding:20px 16px;}
+}</style>
 </head>
 <body>
   <div class="wrap">
